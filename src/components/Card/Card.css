@@ -1,0 +1,47 @@
+/* card */
+.card {
+  background: var(--white-color);
+  box-shadow: var(--big-box-shadow);
+  height: 18rem;
+  width: 15rem;
+  border-radius: 20px;
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  flex-flow: column;
+}
+
+.product-card {
+  position: relative;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 20px;
+  background: var(--orange-color);
+  display: flex;
+}
+
+.card-image {
+  width: 11rem;
+  transform: rotate(-20deg);
+  margin-right: 1rem;
+}
+
+.card-details {
+  align-self: flex-start;
+  margin-left: 0.5rem;
+  margin-top: 1rem;
+}
+
+.card-details h4 {
+  display: inline-block;
+}
+
+.card-details h4:nth-child(2) {
+  margin-left: 2rem;
+}
+
+/* @media screen and (max-width: 1293px) {
+  .ecomm-sidebar {
+    display: none;
+  }
+} */
