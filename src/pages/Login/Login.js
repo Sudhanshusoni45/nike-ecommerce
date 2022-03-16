@@ -1,5 +1,6 @@
 import "./login.css";
 import Navbar from "../../components/Navbar/Navbar";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -23,6 +24,8 @@ const Login = () => {
           <a href="">
             <small>Forgot your password</small>
           </a>
+          <Link to={"/signup"}> New here? Create a new account </Link>
+
           <button className="btn login-btn">Login</button>
         </form>
       </div>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 
 const Signup = () => {
@@ -26,6 +27,8 @@ const Signup = () => {
           <a href="">
             <small>Forgot your password</small>
           </a>
+          <Link to={"/login"}>Already have an account ? Login instead</Link>
+
           <button className="btn login-btn">SignUp</button>
         </form>
       </div>
