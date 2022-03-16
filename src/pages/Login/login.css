@@ -1,0 +1,35 @@
+body {
+  background: var(--bg-grey-color);
+}
+
+.login-component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 98vh;
+}
+
+.login-form {
+  width: 30%;
+  box-shadow: var(--big-box-shadow);
+  background: var(--white-color);
+  border-radius: 15px;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn {
+  border-radius: 12px;
+}
+
+.login-btn {
+  padding: 0;
+  display: block;
+  width: 65%;
+  font-size: 1.2rem;
+  background: var(--dark-purple);
+}
