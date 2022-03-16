@@ -8,11 +8,7 @@ import Card from "./components/Card/Card";
 // import MockmanEs from "mockman-js";
 
 function App() {
-  return (
-    <div className="App">
-      <Card />
-    </div>
-  );
+  return <div className="App"></div>;
 }
 
 export default App;
