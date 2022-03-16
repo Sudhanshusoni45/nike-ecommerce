@@ -2,12 +2,11 @@ import "./Card.css";
 import pic from "./shoe.png";
 
 const Card = ({ name, price, bgColor }) => {
-  console.log(bgColor);
   return (
     <>
       <div className="card">
         <div className={`product-card ${bgColor}`}>
-          <img className="card-image" src={pic} alt="" />
+          <img className="card-image" src={pic} alt={`${name}`} />
         </div>
         <div className="card-details">
           <h4>{name}</h4>

@@ -3,17 +3,21 @@ import { useEffect, useState } from "react";
 import Card from "../../components/Card/Card";
 
 import React from "react";
-import SideBar from "../../components/SideBar/SideBar";
 import Navbar from "../../components/Navbar/Navbar";
+import FilterSideBar from "../../components/FilterSideBar/FilterSideBar";
 
 const ProductList = () => {
-  const [products, setProducts] = useState("");
+  const [products, setProducts] = useState([]);
 
   const bgColors = ["bg-yellow", "bg-blue", "bg-pink", "bg-green", "bg-orange"];
 
   const getProducts = async () => {
-    const response = await axios.get("/api/products");
-    setProducts(response.data.products);
+    try {
+      const response = await axios.get("/api/products");
+      setProducts(response.data.products);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   useEffect(() => getProducts(), []);
@@ -22,7 +26,7 @@ const ProductList = () => {
     <>
       <Navbar />
       <div className="main-container">
-        <SideBar />
+        <FilterSideBar />
         <main className="product-grid">
           {products
             ? products.map(({ name, price }) => {

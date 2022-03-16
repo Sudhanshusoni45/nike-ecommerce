@@ -1,4 +1,4 @@
-const SideBar = () => {
+const FilterSideBar = () => {
   return (
     <>
       <aside className="ecomm-sidebar">
@@ -35,37 +35,37 @@ const SideBar = () => {
         <div className="sidebar-filters">
           <h3>Sort By</h3>
           <div>
-            <input type="radio" name="" id="" />
-            <label for="">Price-Low to High</label>
+            <input type="radio" name="sortByPrice" />
+            <label htmlFor="">Price-Low to High</label>
           </div>
 
           <div>
-            <input type="radio" name="" id="" />
-            <label for="">Price-Low to High</label>
+            <input type="radio" name="sortByPrice" />
+            <label htmlFor="">Price-Low to High</label>
           </div>
         </div>
         <h3>Rating</h3>
         <div>
-          <input type="radio" name="" id="" />
-          <label className="margin-left-xxs" for="">
+          <input type="radio" name="sortByRating" />
+          <label className="margin-left-xxs" htmlFor="">
             4 Stars & above
           </label>
         </div>
         <div>
-          <input type="radio" name="" id="" />
-          <label className="margin-left-xxs" for="">
+          <input type="radio" name="sortByRating" />
+          <label className="margin-left-xxs" htmlFor="">
             3 Stars & above
           </label>
         </div>
         <div>
-          <input type="radio" name="" id="" />
-          <label className="margin-left-xxs" for="">
+          <input type="radio" name="sortByRating" />
+          <label className="margin-left-xxs" htmlFor="">
             2 Stars & above
           </label>
         </div>
         <div>
-          <input type="radio" name="" id="" />
-          <label className="margin-left-xxs" for="">
+          <input type="radio" name="sortByRating" />
+          <label className="margin-left-xxs" htmlFor="">
             1 Stars & above
           </label>
         </div>
@@ -74,4 +74,4 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+export default FilterSideBar;
