@@ -3,7 +3,7 @@ import { useState } from "react";
 const SortData = ({ products }) => {
   const [sortedData, setSortedData] = useState("");
 
-  if (e.target.value) {
+  if (e.target.value === "") {
   }
 };
 
