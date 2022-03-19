@@ -74,4 +74,4 @@ const FilterSideBar = () => {
   );
 };
 
-export default FilterSideBar;
+export { FilterSideBar };

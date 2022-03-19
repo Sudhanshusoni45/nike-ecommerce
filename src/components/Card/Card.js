@@ -46,4 +46,4 @@ const Card = ({ id, name, price, bgColor, inWishList, setProducts }) => {
   );
 };
 
-export default Card;
+export { Card };

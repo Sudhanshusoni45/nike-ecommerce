@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import Navbar from "../../components/Navbar/Navbar";
-
+import { Navbar } from "../../components";
 const Signup = () => {
   return (
     <>
@@ -36,4 +35,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export { Signup };

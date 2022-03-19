@@ -4,11 +4,9 @@ import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "../src/index.css";
-import ProductList from "./pages/productListing/ProductList";
-import Login from "./pages/Login/Login";
-import Signup from "./pages/Signup/Signup";
-import Wishlist from "./pages/wishlist/Wishlist";
+
 import { ProductProvider } from "./Context/product-context";
+import { Login, ProductList, Signup, Wishlist } from "./pages";
 
 // Call make Server
 makeServer();

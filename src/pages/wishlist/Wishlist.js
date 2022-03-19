@@ -1,7 +1,5 @@
 import { useState } from "react";
-import Card from "../../components/Card/Card";
-import FilterSideBar from "../../components/FilterSideBar/FilterSideBar";
-import Navbar from "../../components/Navbar/Navbar";
+import { Card, FilterSideBar, Navbar } from "../../components";
 
 const Wishlist = () => {
   const [wishlist, setWishList] = useState([
@@ -40,4 +38,4 @@ const Wishlist = () => {
   );
 };
 
-export default Wishlist;
+export { Wishlist };
