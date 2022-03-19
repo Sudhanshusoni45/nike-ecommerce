@@ -32,7 +32,7 @@ const Card = ({ id, name, price, bgColor, inWishList, setProducts }) => {
         </div>
         <div className="card-details">
           <h4>{name}</h4>
-          <h4>{price}</h4>
+          <h4>${price}</h4>
 
           <div>
             <i className=" fas fa-star fa-sm"></i>

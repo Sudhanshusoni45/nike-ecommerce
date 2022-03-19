@@ -3,13 +3,13 @@ import { Card, FilterSideBar, Navbar } from "../../components";
 
 const Wishlist = () => {
   const [wishlist, setWishList] = useState([
-    { name: "Jordan Zoom", price: "$250" },
-    { name: "Jordan Zoom", price: "$250" },
-    { name: "Jordan Zoom", price: "$250" },
-    { name: "Jordan Zoom", price: "$250" },
-    { name: "Jordan Zoom", price: "$250" },
-    { name: "Jordan Zoom", price: "$250" },
-    { name: "Jordan Zoom", price: "$250" },
+    { name: "Jordan Zoom", price: 250 },
+    { name: "Jordan Zoom", price: 250 },
+    { name: "Jordan Zoom", price: 250 },
+    { name: "Jordan Zoom", price: 250 },
+    { name: "Jordan Zoom", price: 250 },
+    { name: "Jordan Zoom", price: 250 },
+    { name: "Jordan Zoom", price: 250 },
   ]);
   const bgColors = ["bg-yellow", "bg-blue", "bg-pink", "bg-green", "bg-orange"];
 
