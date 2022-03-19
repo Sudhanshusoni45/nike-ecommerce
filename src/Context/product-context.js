@@ -4,7 +4,7 @@ const ProductContext = createContext({ item: 5 });
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "setProducts":
+    case "SET_PRODUCTS":
       return { ...state, products: action.payload };
   }
 };
