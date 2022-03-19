@@ -7,9 +7,9 @@ import { useProducts } from "../../Context/product-context";
 import { Card, Navbar, FilterSideBar } from "../../components";
 
 const ProductList = () => {
+  const [products, setProducts] = useState("");
   useAxios("/api/products", "get");
 
-  const [products, setProducts] = useState("");
   const { state, dispatch } = useProducts();
   const bgColors = ["bg-yellow", "bg-blue", "bg-pink", "bg-green", "bg-orange"];
 
