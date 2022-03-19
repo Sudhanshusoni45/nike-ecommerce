@@ -40,8 +40,20 @@
   margin-left: 2rem;
 }
 
-/* @media screen and (max-width: 1293px) {
-  .ecomm-sidebar {
-    display: none;
-  }
-} */
+.card .badge {
+  background: var(--white-color);
+  width: 2rem;
+  height: 2rem;
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+.card .badge:hover {
+  cursor: pointer;
+}
+
+.wishlist-heart {
+  z-index: 1;
+  color: #f16765;
+  font-size: 1rem;
+}
