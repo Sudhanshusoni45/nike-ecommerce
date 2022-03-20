@@ -6,7 +6,7 @@ import { categoryFilter, getSortData } from "../../utils";
 const ProductList = () => {
   useAxios("/api/products", "get");
 
-  const { state, dispatch } = useProducts();
+  const { productState, productDispatch } = useProducts();
   const bgColors = ["bg-yellow", "bg-blue", "bg-pink", "bg-green", "bg-orange"];
 
   const categoryData = categoryFilter();

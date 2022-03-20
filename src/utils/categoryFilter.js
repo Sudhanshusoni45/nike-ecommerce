@@ -3,8 +3,8 @@ import { useProducts } from "../Context/product-context";
 
 const categoryFilter = () => {
   const { filterState } = useFilters();
-  const { state } = useProducts();
-  const data = state.products;
+  const { productState } = useProducts();
+  const data = productState.products;
 
   const { running, football, walking, basketball, jordans } = filterState;
 
