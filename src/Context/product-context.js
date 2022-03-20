@@ -13,7 +13,7 @@ const useProducts = () => useContext(ProductContext);
 const ProductProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, [{}]);
   return (
-    <ProductContext.Provider value={{ state, dispatch, test: 5 }}>
+    <ProductContext.Provider value={{ state, dispatch }}>
       {children}
     </ProductContext.Provider>
   );
