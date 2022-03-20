@@ -2,7 +2,8 @@ import { useFilters } from "../../Context/filter-context";
 
 const FilterSideBar = () => {
   const { filterState, filterDispatch } = useFilters();
-  const { running, football, basketball, jordans, walking } = filterState;
+  const { running, football, basketball, jordans, walking, sortBy } =
+    filterState;
 
   return (
     <>
@@ -95,6 +96,7 @@ const FilterSideBar = () => {
             <input
               type="radio"
               name="sortByPrice"
+              checked={sortBy === "LOW_TO_HIGH" ? true : false}
               onChange={() => filterDispatch({ type: "LOW_TO_HIGH" })}
             />
             <label htmlFor="">Price-Low to High</label>
@@ -104,6 +106,7 @@ const FilterSideBar = () => {
             <input
               type="radio"
               name="sortByPrice"
+              checked={sortBy === "HIGH_TO_LOW" ? true : false}
               onChange={() => filterDispatch({ type: "HIGH_TO_LOW" })}
             />
             <label htmlFor="">Price-High to Low</label>

@@ -12,7 +12,7 @@ const useAxios = (url, method, body) => {
         case "get": {
           const response = await axios.get(url);
           const data = await response.data;
-          dispatch({ type: "SET_PRODUCTS", payload: data.products });
+          productDispatch({ type: "SET_PRODUCTS", payload: data.products });
         }
         case "post": {
           const response = await axios.post(url, body);
