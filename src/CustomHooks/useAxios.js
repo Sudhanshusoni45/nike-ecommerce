@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useProducts } from "../Context/product-context";
 
 const useAxios = (url, method, body) => {
-  const { state, dispatch } = useProducts();
+  const { productState, productDispatch } = useProducts();
   useEffect(() => networkCall(), []);
 
   const networkCall = async () => {
