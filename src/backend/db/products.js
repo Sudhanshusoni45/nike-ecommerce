@@ -12,6 +12,7 @@ export const products = [
     price: 99,
     categoryName: "running",
     inWishList: true,
+    rating: 4,
   },
   {
     _id: uuid(),
@@ -19,6 +20,7 @@ export const products = [
     price: 98,
     categoryName: "running",
     inWishList: false,
+    rating: 3,
   },
   {
     _id: uuid(),
@@ -26,6 +28,7 @@ export const products = [
     price: 97,
     categoryName: "jordans",
     inWishList: false,
+    rating: 2,
   },
   {
     _id: uuid(),
@@ -33,6 +36,7 @@ export const products = [
     price: 96,
     categoryName: "jordans",
     inWishList: false,
+    rating: 1,
   },
   {
     _id: uuid(),

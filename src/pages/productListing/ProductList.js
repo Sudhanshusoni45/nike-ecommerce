@@ -2,6 +2,8 @@ import useAxios from "../../CustomHooks/useAxios";
 import { useProducts } from "../../Context/product-context";
 import { Card, Navbar, FilterSideBar } from "../../components";
 import { categoryFilter, getSortData } from "../../utils";
+import ratingFilter from "../../utils/ratingFilter";
+import priceFilter from "../../utils/priceFilter";
 
 const ProductList = () => {
   useAxios("/api/products", "get");
@@ -10,7 +12,9 @@ const ProductList = () => {
   const bgColors = ["bg-yellow", "bg-blue", "bg-pink", "bg-green", "bg-orange"];
 
   const categoryData = categoryFilter();
-  const sortedData = getSortData(categoryData);
+  const priceFilterData = priceFilter(categoryData);
+  const ratingData = ratingFilter(priceFilterData);
+  const sortedData = getSortData(ratingData);
 
   return (
     <>
@@ -19,7 +23,7 @@ const ProductList = () => {
         <FilterSideBar />
         <main className="product-grid">
           {sortedData
-            ? sortedData.map(({ id, name, price, inWishList }) => {
+            ? sortedData.map(({ id, name, price, inWishList, rating }) => {
                 const randomNum = parseInt(Math.random() * 5);
 
                 return (
@@ -30,6 +34,7 @@ const ProductList = () => {
                       price={price}
                       bgColor={bgColors[randomNum]}
                       inWishList={inWishList}
+                      rating={rating}
                     />
                   </li>
                 );

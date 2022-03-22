@@ -2,8 +2,15 @@ import { useFilters } from "../../Context/filter-context";
 
 const FilterSideBar = () => {
   const { filterState, filterDispatch } = useFilters();
-  const { running, football, basketball, jordans, walking, sortBy } =
-    filterState;
+  const {
+    running,
+    football,
+    basketball,
+    jordans,
+    walking,
+    sortBy,
+    rangeValue,
+  } = filterState;
 
   return (
     <>
@@ -87,7 +94,16 @@ const FilterSideBar = () => {
 
         <div className="sidebar-filters">
           <h3>Price</h3>
-          <input type="range" />
+          <label htmlFor="priceSlider">$0 to ${rangeValue}</label>
+          <input
+            type="range"
+            min="0"
+            max="1000"
+            value={rangeValue}
+            onChange={(e) =>
+              filterDispatch({ type: "PRICE_FILTER", payload: e.target.value })
+            }
+          />
         </div>
 
         <div className="sidebar-filters">
@@ -114,25 +130,41 @@ const FilterSideBar = () => {
         </div>
         <h3>Rating</h3>
         <div>
-          <input type="radio" name="sortByRating" />
+          <input
+            type="radio"
+            name="sortByRating"
+            onChange={() => filterDispatch({ type: "4_STAR_&_ABOVE" })}
+          />
           <label className="margin-left-xxs" htmlFor="">
             4 Stars & above
           </label>
         </div>
         <div>
-          <input type="radio" name="sortByRating" />
+          <input
+            type="radio"
+            name="sortByRating"
+            onChange={() => filterDispatch({ type: "3_STAR_&_ABOVE" })}
+          />
           <label className="margin-left-xxs" htmlFor="">
             3 Stars & above
           </label>
         </div>
         <div>
-          <input type="radio" name="sortByRating" />
+          <input
+            type="radio"
+            name="sortByRating"
+            onChange={() => filterDispatch({ type: "2_STAR_&_ABOVE" })}
+          />
           <label className="margin-left-xxs" htmlFor="">
             2 Stars & above
           </label>
         </div>
         <div>
-          <input type="radio" name="sortByRating" />
+          <input
+            type="radio"
+            name="sortByRating"
+            onChange={() => filterDispatch({ type: "1_STAR_&_ABOVE" })}
+          />
           <label className="margin-left-xxs" htmlFor="">
             1 Stars & above
           </label>

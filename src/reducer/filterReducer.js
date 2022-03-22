@@ -21,6 +21,21 @@ const filterReducer = (state, action) => {
     case "WALKING":
       return { ...state, walking: action.payload };
 
+    case "4_STAR_&_ABOVE":
+      return { ...state, rating: "4_STAR_&_ABOVE" };
+
+    case "3_STAR_&_ABOVE":
+      return { ...state, rating: "3_STAR_&_ABOVE" };
+
+    case "2_STAR_&_ABOVE":
+      return { ...state, rating: "2_STAR_&_ABOVE" };
+
+    case "1_STAR_&_ABOVE":
+      return { ...state, rating: "1_STAR_&_ABOVE" };
+
+    case "PRICE_FILTER":
+      return { ...state, rangeValue: action.payload };
+
     case "RESET":
       return {
         sortBy: "",
@@ -30,6 +45,8 @@ const filterReducer = (state, action) => {
         basketball: false,
         jordans: false,
         walking: false,
+        rating: "",
+        rangeValue: 1000,
       };
 
     default:
