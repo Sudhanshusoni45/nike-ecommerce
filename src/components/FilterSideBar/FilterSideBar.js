@@ -143,8 +143,11 @@ const FilterSideBar = () => {
             type="radio"
             id="fourStarAbove"
             name="sortByRating"
-            checked={rating === "4_STAR_&_ABOVE" ? true : false}
-            onChange={() => filterDispatch({ type: "4_STAR_&_ABOVE" })}
+            value="4"
+            checked={rating === 4 ? true : false}
+            onChange={() =>
+              filterDispatch({ type: "RATING_FILTER", payload: { value: 4 } })
+            }
           />
           <label className="margin-left-xxs" htmlFor="fourStarAbove">
             4 Stars & above
@@ -155,8 +158,11 @@ const FilterSideBar = () => {
             id="threeStarAbove"
             type="radio"
             name="sortByRating"
-            checked={rating === "3_STAR_&_ABOVE" ? true : false}
-            onChange={() => filterDispatch({ type: "3_STAR_&_ABOVE" })}
+            value="3"
+            checked={rating === 3 ? true : false}
+            onChange={() =>
+              filterDispatch({ type: "RATING_FILTER", payload: { value: 3 } })
+            }
           />
           <label className="margin-left-xxs" htmlFor="threeStarAbove">
             3 Stars & above
@@ -167,8 +173,11 @@ const FilterSideBar = () => {
             type="radio"
             name="sortByRating"
             id="twoStarAbove"
-            checked={rating === "2_STAR_&_ABOVE" ? true : false}
-            onChange={() => filterDispatch({ type: "2_STAR_&_ABOVE" })}
+            value="2"
+            checked={rating === 2 ? true : false}
+            onChange={() =>
+              filterDispatch({ type: "RATING_FILTER", payload: { value: 2 } })
+            }
           />
           <label className="margin-left-xxs" htmlFor="twoStarAbove">
             2 Stars & above
@@ -179,8 +188,11 @@ const FilterSideBar = () => {
             id="oneStarAbove"
             type="radio"
             name="sortByRating"
-            checked={rating === "1_STAR_&_ABOVE" ? true : false}
-            onChange={() => filterDispatch({ type: "1_STAR_&_ABOVE" })}
+            value="1"
+            checked={rating === 1 ? true : false}
+            onChange={() =>
+              filterDispatch({ type: "RATING_FILTER", payload: { value: 1 } })
+            }
           />
           <label className="margin-left-xxs" htmlFor="oneStarAbove">
             1 Stars & above

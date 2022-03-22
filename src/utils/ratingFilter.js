@@ -5,13 +5,13 @@ const ratingFilter = (data) => {
   const { rating } = filterState;
 
   switch (rating) {
-    case "4_STAR_&_ABOVE":
+    case 4:
       return data.filter((item) => item.rating >= 4);
-    case "3_STAR_&_ABOVE":
+    case 3:
       return data.filter((item) => item.rating >= 3);
-    case "2_STAR_&_ABOVE":
+    case 2:
       return data.filter((item) => item.rating >= 2);
-    case "1_STAR_&_ABOVE":
+    case 1:
       return data.filter((item) => item.rating >= 1);
 
     default:
