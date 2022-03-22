@@ -1,14 +1,15 @@
 import useAxios from "../../CustomHooks/useAxios";
-import { useProducts } from "../../Context/product-context";
 import { Card, Navbar, FilterSideBar } from "../../components";
-import { categoryFilter, getSortData } from "../../utils";
-import ratingFilter from "../../utils/ratingFilter";
-import priceFilter from "../../utils/priceFilter";
+import {
+  categoryFilter,
+  getSortData,
+  priceFilter,
+  ratingFilter,
+} from "../../utils";
 
 const ProductList = () => {
   useAxios("/api/products", "get");
 
-  const { productState, productDispatch } = useProducts();
   const bgColors = ["bg-yellow", "bg-blue", "bg-pink", "bg-green", "bg-orange"];
 
   const categoryData = categoryFilter();

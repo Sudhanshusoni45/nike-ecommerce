@@ -11,15 +11,15 @@ const Card = ({
   rating,
 }) => {
   const toggleWishList = (id) => {
-    // setProducts((prevProducts) => {
-    //   return prevProducts.map((product) => {
-    //     if (product.id === id) {
-    //       return { ...product, inWishList: !product.inWishList };
-    //     } else {
-    //       return product;
-    //     }
-    //   });
-    // });
+    setProducts((prevProducts) => {
+      return prevProducts.map((product) => {
+        if (product.id === id) {
+          return { ...product, inWishList: !product.inWishList };
+        } else {
+          return product;
+        }
+      });
+    });
   };
   const ratingStar = () => {
     const starArr = [];

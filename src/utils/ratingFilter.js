@@ -19,4 +19,4 @@ const ratingFilter = (data) => {
   }
 };
 
-export default ratingFilter;
+export { ratingFilter };

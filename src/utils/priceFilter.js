@@ -9,4 +9,4 @@ const priceFilter = (data) => {
   } else return data;
 };
 
-export default priceFilter;
+export { priceFilter };
