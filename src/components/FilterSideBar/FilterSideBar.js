@@ -10,6 +10,7 @@ const FilterSideBar = () => {
     walking,
     sortBy,
     rangeValue,
+    rating,
   } = filterState;
 
   return (
@@ -133,6 +134,7 @@ const FilterSideBar = () => {
           <input
             type="radio"
             name="sortByRating"
+            checked={rating === "4_STAR_&_ABOVE" ? true : false}
             onChange={() => filterDispatch({ type: "4_STAR_&_ABOVE" })}
           />
           <label className="margin-left-xxs" htmlFor="">
@@ -143,6 +145,7 @@ const FilterSideBar = () => {
           <input
             type="radio"
             name="sortByRating"
+            checked={rating === "3_STAR_&_ABOVE" ? true : false}
             onChange={() => filterDispatch({ type: "3_STAR_&_ABOVE" })}
           />
           <label className="margin-left-xxs" htmlFor="">
@@ -153,6 +156,7 @@ const FilterSideBar = () => {
           <input
             type="radio"
             name="sortByRating"
+            checked={rating === "2_STAR_&_ABOVE" ? true : false}
             onChange={() => filterDispatch({ type: "2_STAR_&_ABOVE" })}
           />
           <label className="margin-left-xxs" htmlFor="">
@@ -163,6 +167,7 @@ const FilterSideBar = () => {
           <input
             type="radio"
             name="sortByRating"
+            checked={rating === "1_STAR_&_ABOVE" ? true : false}
             onChange={() => filterDispatch({ type: "1_STAR_&_ABOVE" })}
           />
           <label className="margin-left-xxs" htmlFor="">
