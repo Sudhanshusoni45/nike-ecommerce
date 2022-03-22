@@ -44,7 +44,6 @@ li {
 body {
   background: var(--bg-grey-color);
   font-family: "Poppins", "sans serif";
-  background: black !important;
 }
 
 /* Utility */
