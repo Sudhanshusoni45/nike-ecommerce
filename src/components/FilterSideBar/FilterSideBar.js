@@ -1,71 +1,200 @@
+import { useFilters } from "../../Context/filter-context";
+
 const FilterSideBar = () => {
+  const { filterState, filterDispatch } = useFilters();
+  const {
+    running,
+    football,
+    basketball,
+    jordans,
+    walking,
+    sortBy,
+    rangeValue,
+    rating,
+  } = filterState;
+
   return (
     <>
       <aside className="ecomm-sidebar">
         <div className="sidebar-filters">
           <h3>Filters</h3>
-          <span>Clear</span>
+          <a href="#">
+            <span onClick={() => filterDispatch({ type: "RESET" })}>Clear</span>
+          </a>
         </div>
         <div className="sidebar-filters">
           <h3>Category</h3>
           <ul>
-            <a href="">
-              <li>Jordan</li>
-            </a>
-            <a href="">
-              <li>Running</li>
-            </a>
-            <a href="">
-              <li>Basketball</li>
-            </a>
-            <a href="">
-              <li>Football</li>
-            </a>
-            <a href="">
-              <li>Walking</li>
-            </a>
+            <div>
+              <input
+                type="checkbox"
+                name="category"
+                id="jordans"
+                checked={jordans}
+                onChange={(e) => {
+                  e.target.checked
+                    ? filterDispatch({ type: "JORDANS", payload: true })
+                    : filterDispatch({ type: "JORDANS", payload: false });
+                }}
+              />
+
+              <label htmlFor="running">Jordan</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="category"
+                id="running"
+                checked={running}
+                onChange={(e) => {
+                  e.target.checked
+                    ? filterDispatch({ type: "RUNNING", payload: true })
+                    : filterDispatch({ type: "RUNNING", payload: false });
+                }}
+              />
+              <label htmlFor="running">Running</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="category"
+                id="basketball"
+                checked={basketball}
+                onChange={(e) => {
+                  e.target.checked
+                    ? filterDispatch({ type: "BASKETBALL", payload: true })
+                    : filterDispatch({ type: "BASKETBALL", payload: false });
+                }}
+              />
+              <label htmlFor="basketball">Basketball</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="category"
+                checked={football}
+                id="football"
+                onChange={(e) => {
+                  e.target.checked
+                    ? filterDispatch({ type: "FOOTBALL", payload: true })
+                    : filterDispatch({ type: "FOOTBALL", payload: false });
+                }}
+              />
+              <label htmlFor="football">Football</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="category"
+                checked={walking}
+                id="walking"
+                onChange={(e) => {
+                  e.target.checked
+                    ? filterDispatch({ type: "WALKING", payload: true })
+                    : filterDispatch({ type: "WALKING", payload: false });
+                }}
+              />
+              <label htmlFor="walking">Walking</label>
+            </div>
           </ul>
         </div>
 
         <div className="sidebar-filters">
           <h3>Price</h3>
-          <input type="range" />
+          <label htmlFor="priceSlider">$0 to ${rangeValue}</label>
+          <input
+            type="range"
+            min="0"
+            max="1000"
+            value={rangeValue}
+            onChange={(e) =>
+              filterDispatch({ type: "PRICE_FILTER", payload: e.target.value })
+            }
+          />
         </div>
 
         <div className="sidebar-filters">
           <h3>Sort By</h3>
           <div>
-            <input type="radio" name="sortByPrice" />
-            <label htmlFor="">Price-Low to High</label>
+            <input
+              type="radio"
+              name="sortByPrice"
+              id="lowToHigh"
+              checked={sortBy === "LOW_TO_HIGH" ? true : false}
+              onChange={() => filterDispatch({ type: "LOW_TO_HIGH" })}
+            />
+            <label htmlFor="lowToHigh">Price-Low to High</label>
           </div>
 
           <div>
-            <input type="radio" name="sortByPrice" />
-            <label htmlFor="">Price-Low to High</label>
+            <input
+              id="highToLow"
+              type="radio"
+              name="sortByPrice"
+              checked={sortBy === "HIGH_TO_LOW" ? true : false}
+              onChange={() => filterDispatch({ type: "HIGH_TO_LOW" })}
+            />
+            <label htmlFor="highToLow">Price-High to Low</label>
           </div>
         </div>
         <h3>Rating</h3>
         <div>
-          <input type="radio" name="sortByRating" />
-          <label className="margin-left-xxs" htmlFor="">
+          <input
+            type="radio"
+            id="fourStarAbove"
+            name="sortByRating"
+            value="4"
+            checked={rating === 4 ? true : false}
+            onChange={() =>
+              filterDispatch({ type: "RATING_FILTER", payload: { value: 4 } })
+            }
+          />
+          <label className="margin-left-xxs" htmlFor="fourStarAbove">
             4 Stars & above
           </label>
         </div>
         <div>
-          <input type="radio" name="sortByRating" />
-          <label className="margin-left-xxs" htmlFor="">
+          <input
+            id="threeStarAbove"
+            type="radio"
+            name="sortByRating"
+            value="3"
+            checked={rating === 3 ? true : false}
+            onChange={() =>
+              filterDispatch({ type: "RATING_FILTER", payload: { value: 3 } })
+            }
+          />
+          <label className="margin-left-xxs" htmlFor="threeStarAbove">
             3 Stars & above
           </label>
         </div>
         <div>
-          <input type="radio" name="sortByRating" />
-          <label className="margin-left-xxs" htmlFor="">
+          <input
+            type="radio"
+            name="sortByRating"
+            id="twoStarAbove"
+            value="2"
+            checked={rating === 2 ? true : false}
+            onChange={() =>
+              filterDispatch({ type: "RATING_FILTER", payload: { value: 2 } })
+            }
+          />
+          <label className="margin-left-xxs" htmlFor="twoStarAbove">
             2 Stars & above
           </label>
         </div>
         <div>
-          <input type="radio" name="sortByRating" />
-          <label className="margin-left-xxs" htmlFor="">
+          <input
+            id="oneStarAbove"
+            type="radio"
+            name="sortByRating"
+            value="1"
+            checked={rating === 1 ? true : false}
+            onChange={() =>
+              filterDispatch({ type: "RATING_FILTER", payload: { value: 1 } })
+            }
+          />
+          <label className="margin-left-xxs" htmlFor="oneStarAbove">
             1 Stars & above
           </label>
         </div>

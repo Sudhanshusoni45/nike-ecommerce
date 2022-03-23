@@ -1,17 +1,21 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-
-import React from "react";
 import useAxios from "../../CustomHooks/useAxios";
-import { useProducts } from "../../Context/product-context";
 import { Card, Navbar, FilterSideBar } from "../../components";
+import {
+  categoryFilter,
+  getSortData,
+  priceFilter,
+  ratingFilter,
+} from "../../utils";
 
 const ProductList = () => {
-  const [products, setProducts] = useState("");
   useAxios("/api/products", "get");
 
-  const { state, dispatch } = useProducts();
   const bgColors = ["bg-yellow", "bg-blue", "bg-pink", "bg-green", "bg-orange"];
+
+  const categoryData = categoryFilter();
+  const priceFilterData = priceFilter(categoryData);
+  const ratingData = ratingFilter(priceFilterData);
+  const sortedData = getSortData(ratingData);
 
   return (
     <>
@@ -19,8 +23,8 @@ const ProductList = () => {
       <div className="main-container">
         <FilterSideBar />
         <main className="product-grid">
-          {state.products
-            ? state.products.map(({ id, name, price, inWishList }) => {
+          {sortedData
+            ? sortedData.map(({ id, name, price, inWishList, rating }) => {
                 const randomNum = parseInt(Math.random() * 5);
 
                 return (
@@ -31,7 +35,7 @@ const ProductList = () => {
                       price={price}
                       bgColor={bgColors[randomNum]}
                       inWishList={inWishList}
-                      setProducts={setProducts}
+                      rating={rating}
                     />
                   </li>
                 );

@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useProducts } from "../Context/product-context";
 
 const useAxios = (url, method, body) => {
-  const { state, dispatch } = useProducts();
+  const { productState, productDispatch } = useProducts();
   useEffect(() => networkCall(), []);
 
   const networkCall = async () => {
@@ -12,7 +12,7 @@ const useAxios = (url, method, body) => {
         case "get": {
           const response = await axios.get(url);
           const data = await response.data;
-          dispatch({ type: "SET_PRODUCTS", payload: data.products });
+          productDispatch({ type: "SET_PRODUCTS", payload: data.products });
         }
         case "post": {
           const response = await axios.post(url, body);

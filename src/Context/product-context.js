@@ -2,18 +2,18 @@ import { createContext, useReducer, useContext } from "react";
 
 const ProductContext = createContext({ item: 5 });
 
-const reducer = (state, action) => {
+const reducer = (productState, action) => {
   switch (action.type) {
     case "SET_PRODUCTS":
-      return { ...state, products: action.payload };
+      return { ...productState, products: action.payload };
   }
 };
 
 const useProducts = () => useContext(ProductContext);
 const ProductProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, [{}]);
+  const [productState, productDispatch] = useReducer(reducer, [{}]);
   return (
-    <ProductContext.Provider value={{ state, dispatch, test: 5 }}>
+    <ProductContext.Provider value={{ productState, productDispatch }}>
       {children}
     </ProductContext.Provider>
   );

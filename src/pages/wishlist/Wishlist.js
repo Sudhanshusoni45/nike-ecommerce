@@ -17,7 +17,7 @@ const Wishlist = () => {
     <>
       <Navbar />
       <div className="main-container">
-        <FilterSideBar />
+        {/* <FilterSideBar /> */}
         <main className="product-grid">
           {wishlist.length
             ? wishlist.map(({ name, price }) => {
