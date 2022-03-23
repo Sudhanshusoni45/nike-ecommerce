@@ -8,6 +8,7 @@ import "../src/index.css";
 import { ProductProvider } from "./Context/product-context";
 import { Login, ProductList, Signup, Wishlist } from "./pages";
 import { FilterPovider } from "./Context/filter-context";
+import MockAPI from "./pages/Mockman/Mockman";
 
 // Call make Server
 makeServer();
@@ -23,6 +24,7 @@ ReactDOM.render(
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/wishlist" element={<Wishlist />} />
+            <Route path="/mockman" element={<MockAPI />} />
           </Routes>
         </BrowserRouter>
       </FilterPovider>
