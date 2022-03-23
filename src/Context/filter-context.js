@@ -12,6 +12,8 @@ const FilterPovider = ({ children }) => {
     basketball: false,
     jordans: false,
     walking: false,
+    rating: "",
+    rangeValue: 1000,
   });
 
   return (

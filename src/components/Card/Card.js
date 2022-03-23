@@ -1,7 +1,15 @@
 import "./Card.css";
 import pic from "./shoe.png";
 
-const Card = ({ id, name, price, bgColor, inWishList, setProducts }) => {
+const Card = ({
+  id,
+  name,
+  price,
+  bgColor,
+  inWishList,
+  setProducts,
+  rating,
+}) => {
   const toggleWishList = (id) => {
     setProducts((prevProducts) => {
       return prevProducts.map((product) => {
@@ -13,6 +21,15 @@ const Card = ({ id, name, price, bgColor, inWishList, setProducts }) => {
       });
     });
   };
+  const ratingStar = () => {
+    const starArr = [];
+    for (let i = 0; i < rating; i++) {
+      starArr.push(i);
+    }
+    return starArr;
+  };
+
+  const starArr = ratingStar();
 
   return (
     <>
@@ -33,12 +50,10 @@ const Card = ({ id, name, price, bgColor, inWishList, setProducts }) => {
         <div className="card-details">
           <h4>{name}</h4>
           <h4>${price}</h4>
-
           <div>
-            <i className=" fas fa-star fa-sm"></i>
-            <i className=" fas fa-star fa-sm"></i>
-            <i className=" fas fa-star fa-sm"></i>
-            <i className=" fas fa-star fa-sm"></i>
+            {starArr.map((item) => (
+              <i className=" fas fa-star fa-sm"></i>
+            ))}
           </div>
         </div>
       </div>
