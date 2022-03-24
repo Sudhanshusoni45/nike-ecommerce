@@ -40,7 +40,7 @@ export const users = [
     firstName: "Adarsh",
     lastName: "Balak",
     email: "sudhanshu@gmail.com",
-    password: "sudhanshu",
+    password: bcyrpt.hashSync("sudhanshu", 5),
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
