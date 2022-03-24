@@ -1,12 +1,13 @@
 import "./login.css";
 import { Navbar } from "../../components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../../Context/auth-context";
 
 const Login = () => {
   const { authDispatch } = useAuth();
+  const navigate = useNavigate();
 
   const [user, setUser] = useState({
     email: "sudhanshu@gmail.com",
@@ -40,7 +41,6 @@ const Login = () => {
           type: "LOGIN",
           payload: { user: foundUser, token: token },
         });
-
         navigate("/");
       } else if (status === 404) {
         throw new Error("Email is not registered");
