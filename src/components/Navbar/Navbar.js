@@ -13,7 +13,13 @@ const Navbar = () => {
         <Link to={"/login"}>
           <button className="btn margin-right-xxs bg-primary">Login</button>
         </Link>
-        <i className="fas fa-shopping-cart fa-lg"></i>
+
+        <Link to={"/wishlist"}>
+          <i className="fas fa-heart fa-lg margin-right-xxs"></i>
+        </Link>
+        <Link to={"#"}>
+          <i className="fas fa-shopping-cart fa-lg"></i>
+        </Link>
       </nav>
     </header>
   );

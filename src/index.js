@@ -10,6 +10,7 @@ import { Login, ProductList, Signup, Wishlist } from "./pages";
 import { FilterPovider } from "./Context/filter-context";
 import MockAPI from "./pages/Mockman/Mockman";
 import { AuthProvider } from "./Context/auth-context";
+import { WishlistProvider } from "./Context/wishlist-context";
 
 // Call make Server
 makeServer();
@@ -19,16 +20,18 @@ ReactDOM.render(
     <ProductProvider value={{ item: 5 }}>
       <FilterPovider>
         <AuthProvider>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<App />} />
-              <Route path="/productlist" element={<ProductList />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/wishlist" element={<Wishlist />} />
-              <Route path="/mockman" element={<MockAPI />} />
-            </Routes>
-          </BrowserRouter>
+          <WishlistProvider>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<App />} />
+                <Route path="/productlist" element={<ProductList />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/wishlist" element={<Wishlist />} />
+                <Route path="/mockman" element={<MockAPI />} />
+              </Routes>
+            </BrowserRouter>
+          </WishlistProvider>
         </AuthProvider>
       </FilterPovider>
     </ProductProvider>

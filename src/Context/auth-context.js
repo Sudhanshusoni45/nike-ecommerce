@@ -5,8 +5,7 @@ import authReducer from "../reducer/authReducer";
 const AuthContext = createContext(null);
 
 const initialState = {
-  user: "",
-  token: "",
+  token: null,
 };
 
 const AuthProvider = ({ children }) => {

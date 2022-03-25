@@ -1,26 +1,10 @@
+import { useWishlist } from "../../Context/wishlist-context";
 import "./Card.css";
 import pic from "./shoe.png";
 
-const Card = ({
-  id,
-  name,
-  price,
-  bgColor,
-  inWishList,
-  setProducts,
-  rating,
-}) => {
-  const toggleWishList = (id) => {
-    setProducts((prevProducts) => {
-      return prevProducts.map((product) => {
-        if (product.id === id) {
-          return { ...product, inWishList: !product.inWishList };
-        } else {
-          return product;
-        }
-      });
-    });
-  };
+const Card = ({ _id, name, price, bgColor, inWishList, rating }) => {
+  const { addToWishList } = useWishlist();
+
   const ratingStar = () => {
     const starArr = [];
     for (let i = 0; i < rating; i++) {
@@ -35,13 +19,30 @@ const Card = ({
     <>
       <div className="card">
         <div className={`product-card ${bgColor}`}>
-          <div className="badge" onClick={() => toggleWishList(id)}>
-            {inWishList && <i className="fas fa-heart wishlist-heart"></i>}
+          <div className="badge">
+            {inWishList && (
+              <i
+                className="fas fa-heart wishlist-heart"
+                onClick={() => {
+                  deleteFromWishlist(_id);
+                }}
+              ></i>
+            )}
 
             {!inWishList && (
               <i
                 className="fa fa-heart-o wishlist-heart"
                 aria-hidden="true"
+                onClick={() => {
+                  addToWishList({
+                    _id,
+                    name,
+                    price,
+                    bgColor,
+                    inWishList,
+                    rating,
+                  });
+                }}
               ></i>
             )}
           </div>

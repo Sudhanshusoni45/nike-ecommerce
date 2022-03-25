@@ -6,8 +6,11 @@ import {
   priceFilter,
   ratingFilter,
 } from "../../utils";
+import { useWishlist } from "../../Context/wishlist-context";
 
 const ProductList = () => {
+  const { wishlistState } = useWishlist();
+
   useAxios("/api/products", "get");
 
   const bgColors = ["bg-yellow", "bg-blue", "bg-pink", "bg-green", "bg-orange"];
@@ -17,6 +20,8 @@ const ProductList = () => {
   const ratingData = ratingFilter(priceFilterData);
   const sortedData = getSortData(ratingData);
 
+  const checkInWishList = () => {};
+
   return (
     <>
       <Navbar />
@@ -24,13 +29,13 @@ const ProductList = () => {
         <FilterSideBar />
         <main className="product-grid">
           {sortedData
-            ? sortedData.map(({ id, name, price, inWishList, rating }) => {
+            ? sortedData.map(({ _id, name, price, inWishList, rating }) => {
                 const randomNum = parseInt(Math.random() * 5);
 
                 return (
-                  <li key={id}>
+                  <li key={_id}>
                     <Card
-                      id={id}
+                      _id={_id}
                       name={name}
                       price={price}
                       bgColor={bgColors[randomNum]}
