@@ -1,9 +1,20 @@
+import { useState } from "react";
+import { useEffect } from "react";
 import { useWishlist } from "../../Context/wishlist-context";
 import "./Card.css";
 import pic from "./shoe.png";
 
-const Card = ({ _id, name, price, bgColor, inWishList, rating }) => {
-  const { addToWishList } = useWishlist();
+const Card = ({ _id, name, price, bgColor, rating }) => {
+  const { addToWishList, wishlistState } = useWishlist();
+  const [inWishlist, setInWishlist] = useState(false);
+
+  const checkInWishlist = () => {
+    wishlistState.map((item) =>
+      item._id === _id ? setInWishlist(true) : null
+    );
+  };
+
+  useEffect(() => checkInWishlist(), [wishlistState]);
 
   const ratingStar = () => {
     const starArr = [];
@@ -20,16 +31,17 @@ const Card = ({ _id, name, price, bgColor, inWishList, rating }) => {
       <div className="card">
         <div className={`product-card ${bgColor}`}>
           <div className="badge">
-            {inWishList && (
+            {inWishlist && (
               <i
                 className="fas fa-heart wishlist-heart"
                 onClick={() => {
+                  setInWishlist(false);
                   deleteFromWishlist(_id);
                 }}
               ></i>
             )}
 
-            {!inWishList && (
+            {!inWishlist && (
               <i
                 className="fa fa-heart-o wishlist-heart"
                 aria-hidden="true"
@@ -39,7 +51,7 @@ const Card = ({ _id, name, price, bgColor, inWishList, rating }) => {
                     name,
                     price,
                     bgColor,
-                    inWishList,
+                    inWishlist,
                     rating,
                   });
                 }}

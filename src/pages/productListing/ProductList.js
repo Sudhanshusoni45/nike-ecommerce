@@ -20,8 +20,6 @@ const ProductList = () => {
   const ratingData = ratingFilter(priceFilterData);
   const sortedData = getSortData(ratingData);
 
-  const checkInWishList = () => {};
-
   return (
     <>
       <Navbar />
@@ -29,7 +27,7 @@ const ProductList = () => {
         <FilterSideBar />
         <main className="product-grid">
           {sortedData
-            ? sortedData.map(({ _id, name, price, inWishList, rating }) => {
+            ? sortedData.map(({ _id, name, price, rating }) => {
                 const randomNum = parseInt(Math.random() * 5);
 
                 return (
@@ -39,7 +37,6 @@ const ProductList = () => {
                       name={name}
                       price={price}
                       bgColor={bgColors[randomNum]}
-                      inWishList={inWishList}
                       rating={rating}
                     />
                   </li>
