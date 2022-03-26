@@ -13,7 +13,7 @@ const categoryFilter = () => {
   }
 
   const filteredData = [];
-
+  // this could be done using object.keys
   if (jordans) {
     const jordansShoes = data.filter((item) => item.categoryName === "jordans");
     filteredData.push(...jordansShoes);

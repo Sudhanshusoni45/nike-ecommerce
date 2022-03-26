@@ -5,7 +5,7 @@ import authReducer from "../reducer/authReducer";
 const AuthContext = createContext(null);
 
 const initialState = {
-  token: null,
+  token: localStorage.getItem("token") ? localStorage.getItem("token") : null,
 };
 
 const AuthProvider = ({ children }) => {

@@ -24,11 +24,12 @@ const WishlistProvider = ({ children }) => {
             authorization: token,
           },
         };
+
         const data = {
           product,
         };
+
         const response = await axios.post("/api/user/wishlist", data, config);
-        console.log("response from add to wishlist:", response);
 
         wishlistDispatch({
           type: "ADD_TO_WISHLIST",
@@ -57,11 +58,23 @@ const WishlistProvider = ({ children }) => {
           type: "INITIALIZE",
           payload: response.data.wishlist,
         });
-
-        console.log("response from getWishList:", response);
       } catch (err) {
         console.log(err);
       }
+    }
+  };
+
+  const deleteFromWishlist = async (_id) => {
+    try {
+      const config = {
+        headers: {
+          authorization: token,
+        },
+      };
+      const response = await axios.delete(`/api/user/wishlist/${_id}`, config);
+      wishlistDispatch({ type: "DELETE", payload: response.data.wishlist });
+    } catch (err) {
+      console.log("err in deleteFromWishlist", err);
     }
   };
 
@@ -69,7 +82,12 @@ const WishlistProvider = ({ children }) => {
 
   return (
     <WishlistContext.Provider
-      value={{ wishlistState, wishlistDispatch, addToWishList }}
+      value={{
+        wishlistState,
+        wishlistDispatch,
+        addToWishList,
+        deleteFromWishlist,
+      }}
     >
       {children}
     </WishlistContext.Provider>

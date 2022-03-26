@@ -9,8 +9,6 @@ import {
 import { useWishlist } from "../../Context/wishlist-context";
 
 const ProductList = () => {
-  const { wishlistState } = useWishlist();
-
   useAxios("/api/products", "get");
 
   const bgColors = ["bg-yellow", "bg-blue", "bg-pink", "bg-green", "bg-orange"];
@@ -28,7 +26,7 @@ const ProductList = () => {
         <main className="product-grid">
           {sortedData
             ? sortedData.map(({ _id, name, price, rating }) => {
-                const randomNum = parseInt(Math.random() * 5);
+                const randomNum = parseInt(price % 5);
 
                 return (
                   <li key={_id}>
@@ -38,6 +36,7 @@ const ProductList = () => {
                       price={price}
                       bgColor={bgColors[randomNum]}
                       rating={rating}
+                      fromWishlist={false}
                     />
                   </li>
                 );

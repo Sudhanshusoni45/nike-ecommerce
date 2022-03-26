@@ -8,10 +8,8 @@ import { useWishlist } from "../../Context/wishlist-context";
 const Wishlist = () => {
   const { wishlistState } = useWishlist();
   const { authState } = useAuth();
-  const { token } = authState;
-  console.log("token:", token);
+
   const bgColors = ["bg-yellow", "bg-blue", "bg-pink", "bg-green", "bg-orange"];
-  console.log(wishlistState);
   return (
     <>
       <Navbar />
@@ -19,15 +17,17 @@ const Wishlist = () => {
         {/* <FilterSideBar /> */}
         <main className="product-grid">
           {wishlistState.length
-            ? wishlistState.map(({ name, price, rating }) => {
-                const randomNum = parseInt(Math.random() * 5);
+            ? wishlistState.map(({ _id, name, price, rating, inWishlist }) => {
+                const randomNum = parseInt(price % 5);
 
                 return (
                   <Card
+                    _id={_id}
                     name={name}
                     price={price}
                     bgColor={bgColors[randomNum]}
                     rating={rating}
+                    fromWishlist={true}
                   />
                 );
               })

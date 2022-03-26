@@ -4,9 +4,9 @@ import { useWishlist } from "../../Context/wishlist-context";
 import "./Card.css";
 import pic from "./shoe.png";
 
-const Card = ({ _id, name, price, bgColor, rating }) => {
-  const { addToWishList, wishlistState } = useWishlist();
-  const [inWishlist, setInWishlist] = useState(false);
+const Card = ({ _id, name, price, bgColor, rating, fromWishlist }) => {
+  const { addToWishList, wishlistState, deleteFromWishlist } = useWishlist();
+  const [inWishlist, setInWishlist] = useState(fromWishlist);
 
   const checkInWishlist = () => {
     wishlistState.map((item) =>
@@ -14,7 +14,7 @@ const Card = ({ _id, name, price, bgColor, rating }) => {
     );
   };
 
-  useEffect(() => checkInWishlist(), [wishlistState]);
+  useEffect(() => checkInWishlist(), []);
 
   const ratingStar = () => {
     const starArr = [];
@@ -46,6 +46,8 @@ const Card = ({ _id, name, price, bgColor, rating }) => {
                 className="fa fa-heart-o wishlist-heart"
                 aria-hidden="true"
                 onClick={() => {
+                  setInWishlist(true);
+
                   addToWishList({
                     _id,
                     name,
