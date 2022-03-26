@@ -35,7 +35,7 @@ const Card = ({ _id, name, price, bgColor, rating, fromWishlist }) => {
               <i
                 className="fas fa-heart wishlist-heart"
                 onClick={() => {
-                  setInWishlist(false);
+                  fromWishlist ? null : setInWishlist(false);
                   deleteFromWishlist(_id);
                 }}
               ></i>
