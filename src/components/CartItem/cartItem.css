@@ -1,0 +1,72 @@
+.cart-container {
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+/* .cart-container {
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+} */
+
+/* Price Details */
+.price-details {
+  width: 30rem;
+  background: var(--white-color);
+  padding: var(--space-sm);
+  display: flex;
+  flex-flow: column;
+  gap: var(--space-xxs);
+}
+
+.price-details-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-xxs);
+  width: 100%;
+  justify-content: end;
+}
+
+.price-details button {
+  width: 90%;
+  align-self: center;
+}
+
+/* Horizontal Card */
+
+.horizontal-ecomm-card {
+  background: var(--white-color);
+  box-shadow: var(--big-box-shadow);
+  height: 12rem;
+  width: 25rem;
+  border-radius: 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 0 1rem;
+  margin-top: 0;
+}
+
+.horizontal-card-image-bg {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 20px;
+  background: var(--orange-color);
+  display: flex;
+}
+
+.horizontal-card-details {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  margin-left: 1rem;
+  height: 10rem;
+}
+
+.horizontal-card-details button {
+  font-size: 14px;
+}

@@ -11,6 +11,7 @@ import { FilterPovider } from "./Context/filter-context";
 import MockAPI from "./pages/Mockman/Mockman";
 import { AuthProvider } from "./Context/auth-context";
 import { WishlistProvider } from "./Context/wishlist-context";
+import Cart from "./pages/Cart/Cart";
 
 // Call make Server
 makeServer();
@@ -29,6 +30,7 @@ ReactDOM.render(
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/wishlist" element={<Wishlist />} />
                 <Route path="/mockman" element={<MockAPI />} />
+                <Route path="/cart" element={<Cart />} />
               </Routes>
             </BrowserRouter>
           </WishlistProvider>
