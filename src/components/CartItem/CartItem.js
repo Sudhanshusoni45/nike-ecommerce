@@ -1,7 +1,9 @@
+import { useCart } from "../../Context/cart-context";
 import "./cartItem.css";
 import pic from "./shoe.png";
 
 const CartItem = ({ name, _id, price, rating }) => {
+  const { removeFromCart } = useCart();
   return (
     <>
       <div className="horizontal-ecomm-card">
@@ -20,7 +22,9 @@ const CartItem = ({ name, _id, price, rating }) => {
 
             <i className="fas fa-minus"></i>
           </div>
-          <button className="btn">Remove from Cart</button>
+          <button onClick={() => removeFromCart(_id)} className="btn">
+            Remove from Cart
+          </button>
         </div>
       </div>
     </>

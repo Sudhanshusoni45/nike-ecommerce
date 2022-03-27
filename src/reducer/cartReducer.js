@@ -6,6 +6,8 @@ const cartReducer = (state, { type, payload }) => {
       return [...products];
     case "ADD_TO_CART":
       return [...products];
+    case "REMOVE_FROM_CART":
+      return [...products];
   }
 };
 

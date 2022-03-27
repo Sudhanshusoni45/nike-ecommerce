@@ -14,11 +14,11 @@ const useAxios = (url, method, body) => {
           const data = await response.data;
           productDispatch({ type: "SET_PRODUCTS", payload: data.products });
         }
-        case "post": {
-          const response = await axios.post(url, body);
-          return response;
-          // this is incomplete i will work more on this later
-        }
+        // case "post": {
+        //   const response = await axios.post(url, body);
+        //   return response;
+        // this is incomplete i will work more on this later
+        // }
         default:
           return "default";
       }
