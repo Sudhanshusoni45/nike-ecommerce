@@ -73,14 +73,26 @@ const Card = ({ _id, name, price, bgColor, rating, fromWishlist }) => {
             ))}
           </div>
         </div>
-        <button
-          onClick={() =>
-            addToCart({ _id, name, price, bgColor, inWishlist, rating })
-          }
-          className="addToCart-btn btn"
-        >
-          Add to Cart
-        </button>
+        {fromWishlist ? (
+          <button
+            onClick={() => {
+              addToCart({ _id, name, price, bgColor, inWishlist, rating });
+              deleteFromWishlist(_id);
+            }}
+            className="addToCart-btn btn"
+          >
+            Move to Cart
+          </button>
+        ) : (
+          <button
+            onClick={() =>
+              addToCart({ _id, name, price, bgColor, inWishlist, rating })
+            }
+            className="addToCart-btn btn"
+          >
+            Add to Cart
+          </button>
+        )}
       </div>
     </>
   );
