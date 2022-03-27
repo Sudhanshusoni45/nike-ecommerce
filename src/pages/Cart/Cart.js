@@ -5,8 +5,12 @@ const Cart = () => {
     <>
       <Navbar />
       <div class="cart-container">
-        <CartItem />
-        
+        <div className="cart-item-container">
+          <CartItem />
+          <CartItem />
+          <CartItem />
+        </div>
+
         <div className="price-details">
           <h3>Price Details</h3>
           <div className="price-details-grid">

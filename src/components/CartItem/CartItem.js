@@ -1,14 +1,14 @@
 import "./cartItem.css";
+import pic from "./shoe.png";
 
 const CartItem = () => {
   return (
     <>
-      {/* <div className="cart-container"> */}
       <div className="horizontal-ecomm-card">
         <div className="horizontal-card-image-bg">
           <img
             className="card-image"
-            src="./jordan-zoom-separate-pf-basketball-shoes-kGPg2r-removebg.png"
+            src={pic}
             alt="jordan shoe"
           />
         </div>
@@ -27,7 +27,6 @@ const CartItem = () => {
           <button className="btn">Remove from Cart</button>
         </div>
       </div>
-      {/* </div> */}
     </>
   );
 };
