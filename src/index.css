@@ -2,6 +2,7 @@
 @import url("https://maya-ui.netlify.app/main.css");
 @import url("../src/variable.css");
 @import url("../src/components/CartItem/cartItem.css");
+@import url("../src/components/Card/Card.css");
 
 .sm {
   width: 2rem;
@@ -128,4 +129,8 @@ a:hover {
 
 .index-container h3 {
   margin-bottom: var(--space-xxs);
+}
+
+.primary-btn {
+  background-color: var(--dark-purple);
 }

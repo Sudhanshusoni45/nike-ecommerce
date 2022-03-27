@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import { useCart } from "../../Context/cart-context";
 import { useWishlist } from "../../Context/wishlist-context";
-import "./Card.css";
+// import "./Card.css";
 import pic from "./shoe.png";
 
 const Card = ({ _id, name, price, bgColor, rating, fromWishlist }) => {
   const { addToWishList, wishlistState, deleteFromWishlist } = useWishlist();
   const [inWishlist, setInWishlist] = useState(fromWishlist);
+  const { addToCart } = useCart();
 
   const checkInWishlist = () => {
     wishlistState.map((item) =>
@@ -71,6 +73,14 @@ const Card = ({ _id, name, price, bgColor, rating, fromWishlist }) => {
             ))}
           </div>
         </div>
+        <button
+          onClick={() =>
+            addToCart({ _id, name, price, bgColor, inWishlist, rating })
+          }
+          className="addToCart-btn btn"
+        >
+          Add to Cart
+        </button>
       </div>
     </>
   );

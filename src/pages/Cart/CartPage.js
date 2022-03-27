@@ -1,14 +1,20 @@
 import { CartItem, Navbar } from "../../components";
+import { useCart } from "../../Context/cart-context";
 
-const Cart = () => {
+const CartPage = () => {
+  const { cartState } = useCart();
+  console.log("cartState:", cartState);
+
   return (
     <>
       <Navbar />
-      <div class="cart-container">
+      <div className="cart-container">
         <div className="cart-item-container">
-          <CartItem />
-          <CartItem />
-          <CartItem />
+          {cartState.length !== 0
+            ? cartState.map(({ name, _id, price, rating }) => (
+                <CartItem name={name} price={price} rating={rating} _id={_id} />
+              ))
+            : null}
         </div>
 
         <div className="price-details">
@@ -31,4 +37,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export { CartPage };

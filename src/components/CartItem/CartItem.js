@@ -1,20 +1,16 @@
 import "./cartItem.css";
 import pic from "./shoe.png";
 
-const CartItem = () => {
+const CartItem = ({ name, _id, price, rating }) => {
   return (
     <>
       <div className="horizontal-ecomm-card">
         <div className="horizontal-card-image-bg">
-          <img
-            className="card-image"
-            src={pic}
-            alt="jordan shoe"
-          />
+          <img className="card-image" src={pic} alt="jordan shoe" />
         </div>
         <div className="horizontal-card-details">
-          <h3>Jordan Zoom</h3>
-          <h3>$340</h3>
+          <h3>{name}</h3>
+          <h3>${price}</h3>
           <div className="quantity">
             <i className="fas fa-plus"></i>
             <span>
