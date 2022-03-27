@@ -41,7 +41,7 @@ const Login = () => {
           type: "LOGIN",
           payload: { user: foundUser, token: token },
         });
-        navigate("/");
+        navigate("/productlist");
       } else if (status === 404) {
         throw new Error("Email is not registered");
       } else if (status === 401) {
