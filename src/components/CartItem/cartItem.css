@@ -70,3 +70,11 @@
 .horizontal-card-details button {
   font-size: 14px;
 }
+
+.quantity {
+  box-shadow: 1px 1px 3px #acacac;
+  width: 3.1rem;
+  border-radius: 5px;
+  padding: 0 3px;
+  cursor: pointer;
+}

@@ -14,16 +14,17 @@ const CartItem = ({ name, _id, price, rating }) => {
           <h3>{name}</h3>
           <h3>${price}</h3>
           <div className="quantity">
-            <i className="fas fa-plus"></i>
+            <i className="fas fa-minus"></i>
             <span>
               {" "}
               <strong>1</strong>{" "}
             </span>
 
-            <i className="fas fa-minus"></i>
+            <i className="fas fa-plus"></i>
           </div>
+
           <button onClick={() => removeFromCart(_id)} className="btn">
-            Remove from Cart
+            Move to Wishlist
           </button>
         </div>
       </div>
