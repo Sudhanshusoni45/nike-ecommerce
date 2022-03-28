@@ -6,7 +6,6 @@ import {
   priceFilter,
   ratingFilter,
 } from "../../utils";
-import { useWishlist } from "../../Context/wishlist-context";
 
 const ProductList = () => {
   useAxios("/api/products", "get");

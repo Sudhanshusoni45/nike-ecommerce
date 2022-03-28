@@ -72,8 +72,11 @@
 }
 
 .quantity {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   box-shadow: 1px 1px 3px #acacac;
-  width: 3.1rem;
+  width: 4rem;
   border-radius: 5px;
   padding: 0 3px;
   cursor: pointer;

@@ -19,7 +19,6 @@ const CartProvider = ({ children }) => {
         },
       };
       const response = await axios.get("/api/user/cart", config);
-      console.log("response:", response);
       if (response.status == 200) {
         cartDispatch({
           type: "INITIALIZE",
@@ -31,23 +30,60 @@ const CartProvider = ({ children }) => {
     }
   };
 
+  const alreadyInCart = (_id) => {
+    let flag = false;
+    cartState.map((item) => {
+      if (item._id === _id) {
+        flag = true;
+      }
+      console.log("flag:", flag);
+    });
+    return flag;
+  };
+
   const addToCart = async (product) => {
     try {
-      const config = {
-        headers: {
-          authorization: token,
-        },
-      };
+      const itemInCart = alreadyInCart(product._id);
+      console.log("itemInCart:", itemInCart);
 
-      const data = { product };
-      const response = await axios.post("/api/user/cart", data, config);
-      console.log("response:", response);
-      cartDispatch({
-        type: "ADD_TO_CART",
-        payload: { products: response.data.cart },
-      });
+      if (itemInCart) {
+        const data = {
+          action: {
+            type: "increment",
+          },
+        };
+
+        const config = {
+          headers: {
+            authorization: token,
+          },
+        };
+        const response = await axios.post(
+          `/api/user/cart/${product._id}`,
+          data,
+          config
+        );
+        console.log("response from itemInCart:", response);
+
+        cartDispatch({
+          type: "ADD_TO_CART",
+          payload: { products: response.data.cart },
+        });
+      } else {
+        const data = { product };
+        const config = {
+          headers: {
+            authorization: token,
+          },
+        };
+        const response = await axios.post("/api/user/cart", data, config);
+        cartDispatch({
+          type: "ADD_TO_CART",
+          payload: { products: response.data.cart },
+        });
+      }
     } catch (err) {
-      console.log(err);
+      console.log("from add to cart catch", err);
     }
   };
 

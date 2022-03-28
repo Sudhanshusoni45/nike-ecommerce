@@ -11,8 +11,14 @@ const CartPage = () => {
       <div className="cart-container">
         <div className="cart-item-container">
           {cartState.length !== 0
-            ? cartState.map(({ name, _id, price, rating }) => (
-                <CartItem name={name} price={price} rating={rating} _id={_id} />
+            ? cartState.map(({ name, _id, price, rating, bgColor }) => (
+                <CartItem
+                  name={name}
+                  price={price}
+                  rating={rating}
+                  _id={_id}
+                  bgColor={bgColor}
+                />
               ))
             : null}
         </div>

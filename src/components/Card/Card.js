@@ -8,7 +8,7 @@ import pic from "./shoe.png";
 const Card = ({ _id, name, price, bgColor, rating, fromWishlist }) => {
   const { addToWishList, wishlistState, deleteFromWishlist } = useWishlist();
   const [inWishlist, setInWishlist] = useState(fromWishlist);
-  const { addToCart } = useCart();
+  const { addToCart, alreadyInCart } = useCart();
 
   const checkInWishlist = () => {
     wishlistState.map((item) =>
