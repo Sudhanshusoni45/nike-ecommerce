@@ -36,7 +36,6 @@ const CartProvider = ({ children }) => {
       if (item._id === _id) {
         flag = true;
       }
-      console.log("flag:", flag);
     });
     return flag;
   };
@@ -44,7 +43,6 @@ const CartProvider = ({ children }) => {
   const addToCart = async (product) => {
     try {
       const itemInCart = alreadyInCart(product._id);
-      console.log("itemInCart:", itemInCart);
 
       if (itemInCart) {
         const data = {
@@ -107,11 +105,69 @@ const CartProvider = ({ children }) => {
     }
   };
 
+  const incrementQuantity = async (_id) => {
+    console.log("increment quantity");
+    try {
+      const config = {
+        headers: {
+          authorization: token,
+        },
+      };
+      const response = await axios.post(
+        `/api/user/cart/${_id}`,
+        {
+          action: { type: "increment" },
+        },
+        config
+      );
+      if (response.status === 200) {
+        cartDispatch({
+          type: "UPDATE",
+          payload: { products: response.data.cart },
+        });
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const decrementQuantity = async (_id) => {
+    try {
+      const config = {
+        headers: {
+          authorization: token,
+        },
+      };
+      const response = await axios.post(
+        `/api/user/cart/${_id}`,
+        {
+          action: { type: "decrement" },
+        },
+        config
+      );
+      if (response.status === 200) {
+        cartDispatch({
+          type: "UPDATE",
+          payload: { products: response.data.cart },
+        });
+      }
+    } catch (err) {
+      alert(err);
+    }
+  };
+
   useEffect(() => getCart(), []);
 
   return (
     <CartContext.Provider
-      value={{ cartState, cartDispatch, addToCart, removeFromCart }}
+      value={{
+        cartState,
+        cartDispatch,
+        addToCart,
+        removeFromCart,
+        incrementQuantity,
+        decrementQuantity,
+      }}
     >
       {children}
     </CartContext.Provider>

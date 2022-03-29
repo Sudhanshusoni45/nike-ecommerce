@@ -3,7 +3,6 @@ import { useCart } from "../../Context/cart-context";
 
 const CartPage = () => {
   const { cartState } = useCart();
-  console.log("cartState:", cartState);
 
   return (
     <>
@@ -11,14 +10,17 @@ const CartPage = () => {
       <div className="cart-container">
         <div className="cart-item-container">
           {cartState.length !== 0
-            ? cartState.map(({ name, _id, price, rating, bgColor }) => (
-                <CartItem
-                  name={name}
-                  price={price}
-                  rating={rating}
-                  _id={_id}
-                  bgColor={bgColor}
-                />
+            ? cartState.map(({ name, _id, price, rating, bgColor, qty }) => (
+                <li key={_id}>
+                  <CartItem
+                    name={name}
+                    price={price}
+                    rating={rating}
+                    _id={_id}
+                    bgColor={bgColor}
+                    qty={qty}
+                  />
+                </li>
               ))
             : null}
         </div>

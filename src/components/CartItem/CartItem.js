@@ -4,8 +4,9 @@ import { useWishlist } from "../../Context/wishlist-context";
 import "./cartItem.css";
 import pic from "./shoe.png";
 
-const CartItem = ({ name, _id, price, rating, bgColor }) => {
-  const { removeFromCart, addToCart } = useCart();
+const CartItem = ({ name, _id, price, rating, bgColor, qty }) => {
+  const { removeFromCart, addToCart, incrementQuantity, decrementQuantity } =
+    useCart();
   const { addToWishList } = useWishlist();
   const [quantity, setQuantity] = useState(1);
   return (
@@ -18,20 +19,26 @@ const CartItem = ({ name, _id, price, rating, bgColor }) => {
           <h3>{name}</h3>
           <h3>${price}</h3>
           <div className="quantity">
-            <i
-              className="fas fa-minus"
-              onClick={() => setQuantity((prevQuantity) => prevQuantity - 1)}
-            ></i>
+            {qty === 1 ? (
+              <i
+                className="fas fa-trash"
+                onClick={() => removeFromCart(_id)}
+              ></i>
+            ) : (
+              <i
+                className="fas fa-minus"
+                onClick={() => decrementQuantity(_id)}
+              ></i>
+            )}
             <span>
               {" "}
-              <strong>{quantity}</strong>{" "}
+              <strong>{qty}</strong>{" "}
             </span>
 
             <i
               className="fas fa-plus "
               onClick={() => {
-                setQuantity((prevQuantity) => prevQuantity + 1);
-                addToCart({ name, _id, price });
+                incrementQuantity(_id);
               }}
             ></i>
           </div>

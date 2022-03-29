@@ -26,7 +26,6 @@ const ProductList = () => {
           {sortedData
             ? sortedData.map(({ _id, name, price, rating }) => {
                 const randomNum = parseInt(price % 5);
-
                 return (
                   <li key={_id}>
                     <Card
