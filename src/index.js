@@ -6,7 +6,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "../src/index.css";
 
 import { ProductProvider } from "./Context/product-context";
-import { CartPage, Login, ProductList, Signup, Wishlist } from "./pages";
+import {
+  CartPage,
+  Homepage,
+  Login,
+  ProductList,
+  Signup,
+  Wishlist,
+} from "./pages";
 import { FilterPovider } from "./Context/filter-context";
 import MockAPI from "./pages/Mockman/Mockman";
 import { AuthProvider } from "./Context/auth-context";
@@ -32,6 +39,7 @@ ReactDOM.render(
                   <Route path="/wishlist" element={<Wishlist />} />
                   <Route path="/mockman" element={<MockAPI />} />
                   <Route path="/cart" element={<CartPage />} />
+                  <Route path="/homepage" element={<Homepage />} />
                 </Routes>
               </BrowserRouter>
             </CartProvider>
