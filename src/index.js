@@ -32,14 +32,13 @@ ReactDOM.render(
             <CartProvider>
               <BrowserRouter>
                 <Routes>
-                  <Route path="/" element={<App />} />
                   <Route path="/productlist" element={<ProductList />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/signup" element={<Signup />} />
                   <Route path="/wishlist" element={<Wishlist />} />
                   <Route path="/mockman" element={<MockAPI />} />
                   <Route path="/cart" element={<CartPage />} />
-                  <Route path="/homepage" element={<Homepage />} />
+                  <Route path="/" element={<Homepage />} />
                 </Routes>
               </BrowserRouter>
             </CartProvider>
