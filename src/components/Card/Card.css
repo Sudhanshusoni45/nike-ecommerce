@@ -2,7 +2,7 @@
 .card {
   background: var(--white-color);
   box-shadow: var(--big-box-shadow);
-  height: 18rem;
+  height: 21rem;
   width: 15rem;
   border-radius: 20px;
   display: flex;
@@ -50,6 +50,12 @@
 
 .card .badge:hover {
   cursor: pointer;
+}
+
+.addToCart-btn {
+  background: #2e2e2e;
+  width: 12rem;
+  margin-top: 0.4rem;
 }
 
 .wishlist-heart {

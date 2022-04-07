@@ -17,7 +17,7 @@ const Navbar = () => {
         <Link to={"/wishlist"}>
           <i className="fas fa-heart fa-lg margin-right-xxs"></i>
         </Link>
-        <Link to={"#"}>
+        <Link to={"/cart"}>
           <i className="fas fa-shopping-cart fa-lg"></i>
         </Link>
       </nav>

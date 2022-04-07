@@ -1,5 +1,61 @@
-const CartItem = () => {
-    return (  );
-}
- 
-export default CartItem;
+import { useState } from "react";
+import { useCart } from "../../Context/cart-context";
+import { useWishlist } from "../../Context/wishlist-context";
+import "./cartItem.css";
+import pic from "./shoe.png";
+
+const CartItem = ({ name, _id, price, rating, bgColor, qty }) => {
+  const { removeFromCart, addToCart, incrementQuantity, decrementQuantity } =
+    useCart();
+  const { addToWishList } = useWishlist();
+  const [quantity, setQuantity] = useState(1);
+  return (
+    <>
+      <div className="horizontal-ecomm-card">
+        <div className={`horizontal-card-image-bg ${bgColor}`}>
+          <img className="card-image" src={pic} alt="jordan shoe" />
+        </div>
+        <div className="horizontal-card-details">
+          <h3>{name}</h3>
+          <h3>${price}</h3>
+          <div className="quantity">
+            {qty === 1 ? (
+              <i
+                className="fas fa-trash"
+                onClick={() => removeFromCart(_id)}
+              ></i>
+            ) : (
+              <i
+                className="fas fa-minus"
+                onClick={() => decrementQuantity(_id)}
+              ></i>
+            )}
+            <span>
+              {" "}
+              <strong>{qty}</strong>{" "}
+            </span>
+
+            <i
+              className="fas fa-plus "
+              onClick={() => {
+                incrementQuantity(_id);
+              }}
+            ></i>
+          </div>
+
+          <button
+            onClick={() => {
+              addToWishList({ name, _id, price, rating, bgColor });
+              removeFromCart(_id);
+            }}
+            className="btn"
+          >
+            Move to Wishlist
+          </button>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export { CartItem };

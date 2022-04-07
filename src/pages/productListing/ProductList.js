@@ -6,7 +6,6 @@ import {
   priceFilter,
   ratingFilter,
 } from "../../utils";
-import { useWishlist } from "../../Context/wishlist-context";
 
 const ProductList = () => {
   useAxios("/api/products", "get");
@@ -27,7 +26,6 @@ const ProductList = () => {
           {sortedData
             ? sortedData.map(({ _id, name, price, rating }) => {
                 const randomNum = parseInt(price % 5);
-
                 return (
                   <li key={_id}>
                     <Card

@@ -44,6 +44,7 @@ export const products = [
     price: 701,
     categoryName: "football",
     inWishList: false,
+    rating: 4,
   },
   {
     _id: uuid(),
@@ -51,6 +52,7 @@ export const products = [
     price: 801,
     categoryName: "football",
     inWishList: false,
+    rating: 4,
   },
   {
     _id: uuid(),
@@ -58,6 +60,7 @@ export const products = [
     price: 901,
     categoryName: "football",
     inWishList: false,
+    rating: 3,
   },
   {
     _id: uuid(),
@@ -65,6 +68,7 @@ export const products = [
     price: 102,
     categoryName: "basketball",
     inWishList: false,
+    rating: 1,
   },
   {
     _id: uuid(),
@@ -72,6 +76,7 @@ export const products = [
     price: 109,
     categoryName: "basketball",
     inWishList: false,
+    rating: 3,
   },
   {
     _id: uuid(),
@@ -79,6 +84,7 @@ export const products = [
     price: 115,
     categoryName: "basketball",
     inWishList: false,
+    rating: 2,
   },
   {
     _id: uuid(),
@@ -86,6 +92,7 @@ export const products = [
     price: 103,
     categoryName: "walking",
     inWishList: false,
+    rating: 3,
   },
   {
     _id: uuid(),
@@ -93,6 +100,7 @@ export const products = [
     price: 100,
     categoryName: "walking",
     inWishList: false,
+    rating: 4,
   },
   {
     _id: uuid(),
@@ -100,5 +108,6 @@ export const products = [
     price: 100,
     categoryName: "jordans",
     inWishList: false,
+    rating: 3,
   },
 ];
