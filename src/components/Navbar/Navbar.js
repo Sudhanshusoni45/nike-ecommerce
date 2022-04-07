@@ -6,7 +6,9 @@ const Navbar = () => {
   return (
     <header className="header">
       <div className="logo">
-        <h2>Nike</h2>
+        <Link to="/">
+          <h2>Nike</h2>
+        </Link>
       </div>
       <input className="search-bar" type="text" placeholder="Search" />
       <nav>
