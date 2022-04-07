@@ -1,0 +1,56 @@
+/* hero */
+.hero {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .hero img {
+    width: 40%;
+    height: 40%;
+    margin-top: 5rem;
+  }
+  /* category cards */
+  .category-card {
+    width: 25rem;
+    background: var(--lavender-color);
+    border-radius: 2rem;
+    box-shadow: var(--lavender-color) 0px 7px 29px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-xs) 0;
+  }
+  
+  .category-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 8rem;
+  }
+  
+  .category-card img {
+    width: 25rem;
+    height: 27rem;
+    object-fit: cover;
+  }
+  
+  /* New arrivals */
+  
+  .new-arrivals-container {
+    margin-top: 4rem;
+    padding: 1rem 0;
+  }
+  
+  .new-arrivals-container h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .new-arrivals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    gap: 1.2rem;
+    width: 70%;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  
