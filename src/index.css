@@ -42,6 +42,10 @@ li {
 .bg-purple {
   background: var(--dark-purple);
 }
+.bg-black{
+  background: #2e2e2e;
+}
+
 
 body {
   background: var(--bg-grey-color);
