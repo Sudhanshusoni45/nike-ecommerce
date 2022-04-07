@@ -16,22 +16,24 @@ const Wishlist = () => {
       <div className="main-container">
         {/* <FilterSideBar /> */}
         <main className="product-grid">
-          {wishlistState.length
-            ? wishlistState.map(({ _id, name, price, rating, inWishlist }) => {
-                const randomNum = parseInt(price % 5);
+          {wishlistState.length ? (
+            wishlistState.map(({ _id, name, price, rating, inWishlist }) => {
+              const randomNum = parseInt(price % 5);
 
-                return (
-                  <Card
-                    _id={_id}
-                    name={name}
-                    price={price}
-                    bgColor={bgColors[randomNum]}
-                    rating={rating}
-                    fromWishlist={true}
-                  />
-                );
-              })
-            : null}
+              return (
+                <Card
+                  _id={_id}
+                  name={name}
+                  price={price}
+                  bgColor={bgColors[randomNum]}
+                  rating={rating}
+                  fromWishlist={true}
+                />
+              );
+            })
+          ) : (
+            <h1>You have run out of wishes add something to wishlist...</h1>
+          )}
         </main>
       </div>
     </>
