@@ -1,5 +1,5 @@
-import useAxios from "../../CustomHooks/useAxios";
 import { Card, Navbar, FilterSideBar } from "../../components";
+import useAxios from "../../CustomHooks/useAxios";
 import {
   categoryFilter,
   getSortData,
