@@ -7,7 +7,6 @@ import { useAuth } from "../../Context/auth-context";
 
 const Login = () => {
   const location = useLocation();
-  console.log("location:", location);
   const { authDispatch } = useAuth();
   const navigate = useNavigate();
 
