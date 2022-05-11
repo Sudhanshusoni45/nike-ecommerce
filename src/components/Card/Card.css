@@ -9,6 +9,7 @@
   padding: 1rem;
   align-items: center;
   flex-flow: column;
+  cursor: pointer;
 }
 
 .product-card {

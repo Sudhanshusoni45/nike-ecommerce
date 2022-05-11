@@ -1,15 +1,14 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { useCart } from "../../Context/cart-context";
 import { useWishlist } from "../../Context/wishlist-context";
-// import "./Card.css";
 import pic from "./shoe.png";
 
 const Card = ({ _id, name, price, bgColor, rating, fromWishlist }) => {
   const { addToWishList, wishlistState, deleteFromWishlist } = useWishlist();
   const [inWishlist, setInWishlist] = useState(fromWishlist);
-  const { addToCart, alreadyInCart } = useCart();
-
+  const { addToCart } = useCart();
   const checkInWishlist = () => {
     wishlistState.map((item) =>
       item._id === _id ? setInWishlist(true) : null
@@ -25,12 +24,15 @@ const Card = ({ _id, name, price, bgColor, rating, fromWishlist }) => {
     }
     return starArr;
   };
-
+  const Navigate = useNavigate();
   const starArr = ratingStar();
 
   return (
     <>
-      <div className="card">
+      <div
+        className="card"
+        onClick={() => Navigate(`/singleproductpage/${_id}`)}
+      >
         <div className={`product-card ${bgColor}`}>
           <div className="badge">
             {inWishlist && (
