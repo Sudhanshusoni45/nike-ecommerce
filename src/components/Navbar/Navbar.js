@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { ProductContext } from "../../Context/product-context";
+import { useAuth } from "../../Context/auth-context";
 
 const Navbar = () => {
+  const {
+    authState: { token, user },
+    authState,
+  } = useAuth();
   return (
     <header className="header">
       <div className="logo">
@@ -12,8 +15,11 @@ const Navbar = () => {
       </div>
       <input className="search-bar" type="text" placeholder="Search" />
       <nav>
-        <Link to={"/login"}>
-          <button className="btn margin-right-xxs bg-primary">Login</button>
+        <Link to={token ? "/logout" : "/login"}>
+          <i className="fas fa-user fa-lg margin-right-xxs"></i>
+          <span className="margin-right-xxs">
+            {token !== null ? user.firstName : "Login"}
+          </span>
         </Link>
 
         <Link to={"/wishlist"}>

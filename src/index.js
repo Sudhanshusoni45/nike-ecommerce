@@ -10,6 +10,7 @@ import {
   CartPage,
   Homepage,
   Login,
+  LogoutPage,
   ProductList,
   Signup,
   SingleProductPage,
@@ -52,6 +53,7 @@ ReactDOM.render(
                     element={<SingleProductPage />}
                   />
                   <Route path="/" element={<Homepage />} />
+                  <Route path="/logout" element={<LogoutPage />} />
                 </Routes>
               </BrowserRouter>
             </CartProvider>

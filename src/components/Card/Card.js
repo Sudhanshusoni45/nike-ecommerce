@@ -8,7 +8,7 @@ import pic from "./shoe.png";
 const Card = ({ _id, name, price, bgColor, rating, fromWishlist }) => {
   const { addToWishList, wishlistState, deleteFromWishlist } = useWishlist();
   const [inWishlist, setInWishlist] = useState(fromWishlist);
-  const { addToCart } = useCart();
+  const { addToCart, cartState } = useCart();
   const checkInWishlist = () => {
     wishlistState.map((item) =>
       item._id === _id ? setInWishlist(true) : null
@@ -27,11 +27,17 @@ const Card = ({ _id, name, price, bgColor, rating, fromWishlist }) => {
   const Navigate = useNavigate();
   const starArr = ratingStar();
 
+  const checkProductInCart = (_id) => {
+    return cartState.some((item) => item._id === _id);
+  };
+
   return (
     <>
       <div
         className="card"
-        onClick={() => Navigate(`/singleproductpage/${_id}`)}
+        onClick={(e) => {
+          Navigate(`/singleproductpage/${_id}`);
+        }}
       >
         <div className={`product-card ${bgColor}`}>
           <div className="badge">
@@ -87,14 +93,29 @@ const Card = ({ _id, name, price, bgColor, rating, fromWishlist }) => {
             Move to Cart
           </button>
         ) : (
-          <button
-            onClick={() =>
-              addToCart({ _id, name, price, bgColor, inWishlist, rating })
-            }
-            className="addToCart-btn btn"
-          >
-            Add to Cart
-          </button>
+          <div>
+            {checkProductInCart(_id) ? (
+              <button
+                onClick={(e) => {
+                  Navigate("/cart");
+                  e.stopPropagation();
+                }}
+                className="addToCart-btn btn"
+              >
+                Go to Cart
+              </button>
+            ) : (
+              <button
+                onClick={(e) => {
+                  addToCart({ _id, name, price, bgColor, inWishlist, rating });
+                  e.stopPropagation();
+                }}
+                className="addToCart-btn btn"
+              >
+                Add to Cart
+              </button>
+            )}
+          </div>
         )}
       </div>
     </>
