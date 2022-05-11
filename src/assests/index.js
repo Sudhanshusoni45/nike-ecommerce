@@ -6,3 +6,6 @@ export { menCategory };
 
 import womenCategory from "./womenCategory.png";
 export { womenCategory };
+
+import shoe from "./shoe.png";
+export { shoe };

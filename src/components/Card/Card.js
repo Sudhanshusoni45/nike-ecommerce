@@ -69,9 +69,10 @@ const Card = ({ _id, name, price, bgColor, rating, fromWishlist }) => {
         <div className="card-details">
           <h4>{name}</h4>
           <h4>${price}</h4>
+
           <div>
             {starArr.map((item) => (
-              <i className=" fas fa-star fa-sm"></i>
+              <i key={item} className=" fas fa-star fa-sm"></i>
             ))}
           </div>
         </div>

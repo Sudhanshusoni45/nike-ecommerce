@@ -53,7 +53,9 @@ body {
 }
 
 /* Utility */
-
+.margin-left-small{
+  margin-left: var(--space-xs);
+}
 .margin-left-xxs {
   margin-left: var(--space-xxs);
 }
