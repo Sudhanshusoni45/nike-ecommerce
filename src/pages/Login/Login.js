@@ -1,11 +1,12 @@
 import "./login.css";
 import { Navbar } from "../../components";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../../Context/auth-context";
 
 const Login = () => {
+  const location = useLocation();
   const { authDispatch } = useAuth();
   const navigate = useNavigate();
 
@@ -41,7 +42,9 @@ const Login = () => {
           type: "LOGIN",
           payload: { user: foundUser, token: token },
         });
-        navigate("/productlist");
+        navigate(location?.state?.from?.pathname || "/", {
+          replace: true,
+        });
       } else if (status === 404) {
         throw new Error("Email is not registered");
       } else if (status === 401) {
@@ -53,6 +56,8 @@ const Login = () => {
       console.log(err);
     }
   };
+
+  console.log("locattion from login", location);
 
   return (
     <>

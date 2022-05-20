@@ -19,6 +19,7 @@ import MockAPI from "./pages/Mockman/Mockman";
 import { AuthProvider } from "./Context/auth-context";
 import { WishlistProvider } from "./Context/wishlist-context";
 import { CartProvider } from "./Context/cart-context";
+import { RequiresAuth } from "./components";
 
 // Call make Server
 makeServer();
@@ -35,7 +36,14 @@ ReactDOM.render(
                   <Route path="/productlist" element={<ProductList />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/signup" element={<Signup />} />
-                  <Route path="/wishlist" element={<Wishlist />} />
+                  <Route
+                    path="/wishlist"
+                    element={
+                      <RequiresAuth>
+                        <Wishlist />
+                      </RequiresAuth>
+                    }
+                  />
                   <Route path="/mockman" element={<MockAPI />} />
                   <Route path="/cart" element={<CartPage />} />
                   <Route path="/" element={<Homepage />} />
