@@ -5,9 +5,10 @@
   }
   
   .hero img {
-    width: 40%;
-    height: 40%;
-    margin-top: 5rem;
+    width: 90%;
+    height: 100%;
+    margin-top: 1rem;
+    border-radius: 2rem;
   }
   /* category cards */
   .category-card {
@@ -45,12 +46,9 @@
     margin-bottom: 2rem;
   }
   
-  .new-arrivals-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 250px);
-    gap: 1.2rem;
-    width: 70%;
-    margin: 0 auto;
-    justify-content: center;
-  }
-  
+.new-arrivals-grid{
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  padding: 0 5rem;
+}
