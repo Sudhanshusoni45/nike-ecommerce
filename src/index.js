@@ -10,8 +10,10 @@ import {
   CartPage,
   Homepage,
   Login,
+  LogoutPage,
   ProductList,
   Signup,
+  SingleProductPage,
   Wishlist,
 } from "./pages";
 import { FilterPovider } from "./Context/filter-context";
@@ -46,7 +48,12 @@ ReactDOM.render(
                   />
                   <Route path="/mockman" element={<MockAPI />} />
                   <Route path="/cart" element={<CartPage />} />
+                  <Route
+                    path="/singleproductpage/:productId"
+                    element={<SingleProductPage />}
+                  />
                   <Route path="/" element={<Homepage />} />
+                  <Route path="/logout" element={<LogoutPage />} />
                 </Routes>
               </BrowserRouter>
             </CartProvider>

@@ -6,6 +6,9 @@ const AuthContext = createContext(null);
 
 const initialState = {
   token: localStorage.getItem("token") ? localStorage.getItem("token") : null,
+  user: localStorage.getItem("user")
+    ? JSON.parse(localStorage.getItem("user"))
+    : null,
 };
 
 const AuthProvider = ({ children }) => {
