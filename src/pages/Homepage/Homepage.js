@@ -1,5 +1,10 @@
 import { Card, Navbar } from "../../components";
-import { heroimage, menCategory, womenCategory } from "../../assests";
+import {
+  heroimage,
+  menCategory,
+  womenCategory,
+  nikeAirBanner,
+} from "../../assests";
 import "./Homepage.css";
 import { Link } from "react-router-dom";
 
@@ -8,7 +13,7 @@ const Homepage = () => {
     <>
       <Navbar />
       <div className="hero">
-        <img src={heroimage} alt="" />
+        <img src={nikeAirBanner} alt="" />
       </div>
 
       <div className="category-container">
@@ -30,7 +35,6 @@ const Homepage = () => {
       <div className="new-arrivals-container">
         <h1>New Arrivals</h1>
         <div className="new-arrivals-grid">
-          <Card name={"New Arrival"} price={"100"} rating={4} />
           <Card name={"New Arrival"} price={"100"} rating={4} />
           <Card name={"New Arrival"} price={"100"} rating={4} />
           <Card name={"New Arrival"} price={"100"} rating={4} />

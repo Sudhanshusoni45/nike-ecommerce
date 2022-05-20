@@ -1,8 +1,7 @@
 import heroimage from "./heroimage.png";
-export { heroimage };
-
 import menCategory from "./menCategory.png";
-export { menCategory };
-
 import womenCategory from "./womenCategory.png";
-export { womenCategory };
+import nikeAirBanner from "./nikeAirBanner.jpg";
+import jordan13Banner from "./jordan13Banner.jpg";
+
+export { heroimage, menCategory, womenCategory, jordan13Banner, nikeAirBanner };
