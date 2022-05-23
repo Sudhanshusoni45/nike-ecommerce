@@ -5,7 +5,15 @@ import { useCart } from "../../Context/cart-context";
 import { useWishlist } from "../../Context/wishlist-context";
 import pic from "./shoe.png";
 
-const Card = ({ _id, name, price, bgColor, rating, fromWishlist }) => {
+const Card = ({
+  _id,
+  name,
+  price,
+  bgColor,
+  rating,
+  fromWishlist,
+  productImage,
+}) => {
   const { addToWishList, wishlistState, deleteFromWishlist } = useWishlist();
   const [inWishlist, setInWishlist] = useState(fromWishlist);
   const { addToCart, cartState } = useCart();

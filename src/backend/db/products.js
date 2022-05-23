@@ -3,7 +3,8 @@ import { v4 as uuid } from "uuid";
  * Product Database can be added here.
  * You can add products of your wish with different attributes
  * */
-import { shoe } from "../../assests";
+import { running, shoe } from "../../assests";
+
 export const products = [
   {
     _id: uuid(),
@@ -12,7 +13,7 @@ export const products = [
     categoryName: "running",
     inWishList: true,
     rating: 4,
-    image: shoe,
+    productImage: shoe,
   },
   {
     _id: uuid(),
@@ -21,7 +22,7 @@ export const products = [
     categoryName: "running",
     inWishList: false,
     rating: 3,
-    image: shoe,
+    productImage: running,
   },
   {
     _id: uuid(),
@@ -30,7 +31,7 @@ export const products = [
     categoryName: "jordans",
     inWishList: false,
     rating: 2,
-    image: shoe,
+    productImage: shoe,
   },
   {
     _id: uuid(),
@@ -39,7 +40,7 @@ export const products = [
     categoryName: "jordans",
     inWishList: false,
     rating: 1,
-    image: shoe,
+    productImage: running,
   },
   {
     _id: uuid(),
@@ -48,7 +49,7 @@ export const products = [
     categoryName: "football",
     inWishList: false,
     rating: 4,
-    image: shoe,
+    productImage: shoe,
   },
   {
     _id: uuid(),
@@ -57,7 +58,7 @@ export const products = [
     categoryName: "football",
     inWishList: false,
     rating: 4,
-    image: shoe,
+    productImage: shoe,
   },
   {
     _id: uuid(),
@@ -66,7 +67,7 @@ export const products = [
     categoryName: "football",
     inWishList: false,
     rating: 3,
-    image: shoe,
+    productImage: shoe,
   },
   {
     _id: uuid(),
@@ -75,7 +76,7 @@ export const products = [
     categoryName: "basketball",
     inWishList: false,
     rating: 1,
-    image: shoe,
+    productImage: shoe,
   },
   {
     _id: uuid(),
@@ -84,7 +85,7 @@ export const products = [
     categoryName: "basketball",
     inWishList: false,
     rating: 3,
-    image: shoe,
+    productImage: shoe,
   },
   {
     _id: uuid(),
@@ -93,7 +94,7 @@ export const products = [
     categoryName: "basketball",
     inWishList: false,
     rating: 2,
-    image: shoe,
+    productImage: shoe,
   },
   {
     _id: uuid(),
@@ -102,7 +103,7 @@ export const products = [
     categoryName: "walking",
     inWishList: false,
     rating: 3,
-    image: shoe,
+    productImage: shoe,
   },
   {
     _id: uuid(),
@@ -111,7 +112,7 @@ export const products = [
     categoryName: "walking",
     inWishList: false,
     rating: 4,
-    image: shoe,
+    productImage: shoe,
   },
   {
     _id: uuid(),
@@ -120,6 +121,6 @@ export const products = [
     categoryName: "jordans",
     inWishList: false,
     rating: 3,
-    image: shoe,
+    productImage: shoe,
   },
 ];

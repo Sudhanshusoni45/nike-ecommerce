@@ -24,7 +24,7 @@ const ProductList = () => {
         <FilterSideBar />
         <main className="product-grid">
           {sortedData
-            ? sortedData.map(({ _id, name, price, rating }) => {
+            ? sortedData.map(({ _id, name, price, rating, productImage }) => {
                 const randomNum = parseInt(price % 5);
                 return (
                   <li key={_id}>
@@ -35,6 +35,7 @@ const ProductList = () => {
                       bgColor={bgColors[randomNum]}
                       rating={rating}
                       fromWishlist={false}
+                      productImage={productImage}
                     />
                   </li>
                 );

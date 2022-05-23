@@ -4,6 +4,7 @@ import womenCategory from "./womenCategory.png";
 import nikeAirBanner from "./nikeAirBanner.jpg";
 import jordan13Banner from "./jordan13Banner.jpg";
 import shoe from "./shoe.png";
+import running from "./running.png";
 
 export {
   heroimage,
@@ -12,4 +13,5 @@ export {
   jordan13Banner,
   nikeAirBanner,
   shoe,
+  running,
 };
