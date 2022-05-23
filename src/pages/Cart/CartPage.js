@@ -16,6 +16,57 @@ const CartPage = () => {
     setBillPrice(totalPrice);
   };
 
+  const displayRazorpay = async () => {
+    const res = await loadRazorpay(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
+    if (!res) {
+      alert("Razorpay SDK failed to load.");
+      return;
+    }
+    const options = {
+      key: "rzp_test_UetVgthB7AKi3k",
+      amount: "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      currency: "INR",
+      name: "Nike Shoe",
+      description: "Test Transaction",
+      image: "https://example.com/your_logo",
+      order_id: "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+      handler: function (response) {
+        alert(response.razorpay_payment_id);
+        alert(response.razorpay_order_id);
+        alert(response.razorpay_signature);
+      },
+      prefill: {
+        name: "Gaurav Kumar",
+        email: "gaurav.kumar@example.com",
+        contact: "9999999999",
+      },
+      notes: {
+        address: "Razorpay Corporate Office",
+      },
+      theme: {
+        color: "#3399cc",
+      },
+    };
+    const paymentObject = new Razorpay(options);
+    paymentObject.open();
+  };
+
+  const loadRazorpay = (src) => {
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.src = src;
+      script.onload = () => {
+        resolve(true);
+      };
+      script.onerror = () => {
+        resolve(false);
+      };
+      document.body.appendChild(script);
+    });
+  };
+
   useEffect(billHandler, [cartState]);
 
   return (
@@ -57,7 +108,9 @@ const CartPage = () => {
               <h3>{billPrice - 50}</h3>
             </div>
             <p>You will save $50 on this order</p>
-            <button className="btn bg-purple">Place Order</button>
+            <button className="btn bg-purple" onClick={displayRazorpay}>
+              Place Order
+            </button>
           </div>
         ) : null}
       </div>
