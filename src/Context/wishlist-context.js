@@ -18,7 +18,6 @@ const WishlistProvider = ({ children }) => {
   const addToWishList = async (product) => {
     try {
       if (token !== null) {
-        console.log("token", token);
         const config = {
           headers: {
             authorization: token,
