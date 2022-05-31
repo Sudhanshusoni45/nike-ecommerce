@@ -1,4 +1,5 @@
 import { useFilters } from "../../Context/filter-context";
+import "./filterSideBar.css";
 
 const FilterSideBar = () => {
   const { filterState, filterDispatch } = useFilters();
