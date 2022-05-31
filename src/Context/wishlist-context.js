@@ -38,7 +38,7 @@ const WishlistProvider = ({ children }) => {
         alert("Please Login to use wishlist");
       }
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 
@@ -58,7 +58,7 @@ const WishlistProvider = ({ children }) => {
           payload: response.data.wishlist,
         });
       } catch (err) {
-        console.log(err);
+        console.error(err);
       }
     }
   };
@@ -73,7 +73,7 @@ const WishlistProvider = ({ children }) => {
       const response = await axios.delete(`/api/user/wishlist/${_id}`, config);
       wishlistDispatch({ type: "DELETE", payload: response.data.wishlist });
     } catch (err) {
-      console.log("err in deleteFromWishlist", err);
+      console.error(err);
     }
   };
 

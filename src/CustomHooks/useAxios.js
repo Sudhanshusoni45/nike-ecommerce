@@ -23,7 +23,7 @@ const useAxios = (url, method, body) => {
           return "default";
       }
     } catch (err) {
-      console.log("error from catch", err);
+      console.error(err);
     }
   };
 };

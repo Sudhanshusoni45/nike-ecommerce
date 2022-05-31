@@ -28,7 +28,6 @@ const Login = () => {
         email: `${user.email}`,
         password: `${user.password}`,
       });
-      console.log(response);
 
       const { status } = response;
       const { encodedToken: token } = response.data;
@@ -53,7 +52,7 @@ const Login = () => {
         throw new Error("Server Error");
       }
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 
