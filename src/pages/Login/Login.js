@@ -57,8 +57,6 @@ const Login = () => {
     }
   };
 
-  console.log("locattion from login", location);
-
   return (
     <>
       <Navbar />

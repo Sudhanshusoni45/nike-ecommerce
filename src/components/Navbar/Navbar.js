@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../../Context/auth-context";
 
-const Navbar = () => {
+const Navbar = ({ searchQuery, setSearchQuery }) => {
   const {
     authState: { token, user },
     authState,
   } = useAuth();
+  const searchBarHandler = (e) => {
+    setSearchQuery((prevQuery) => e.target.value);
+  };
   return (
     <header className="header">
       <div className="logo">
@@ -13,7 +16,13 @@ const Navbar = () => {
           <h2>Nike</h2>
         </Link>
       </div>
-      <input className="search-bar" type="text" placeholder="Search" />
+      <input
+        className="search-bar"
+        type="text"
+        placeholder="Search"
+        onChange={searchBarHandler}
+        value={searchQuery}
+      />
       <nav>
         <Link to={token ? "/logout" : "/login"}>
           <i className="fas fa-user fa-lg margin-right-xxs"></i>

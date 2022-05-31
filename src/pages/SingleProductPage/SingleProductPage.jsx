@@ -11,7 +11,6 @@ const SingleProductPage = () => {
   const { addToCart } = useCart();
   const { productId } = useParams();
   useEffect(() => getSingleProduct({ productId, setProduct }), []);
-  console.log(product);
   return (
     <>
       <Navbar />
