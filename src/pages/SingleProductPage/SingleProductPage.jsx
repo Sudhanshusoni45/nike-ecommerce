@@ -8,9 +8,22 @@ import { useCart } from "../../Context/cart-context";
 
 const SingleProductPage = () => {
   const [product, setProduct] = useState();
-  const { addToCart } = useCart();
+  const { addToCart, cartState } = useCart();
+  const [isProductInCart, setIsProductInCart] = useState(false);
+  console.log("isProductInCart:", isProductInCart);
+  console.log("cartState:", cartState);
   const { productId } = useParams();
-  useEffect(() => getSingleProduct({ productId, setProduct }), []);
+
+  useEffect(() => {
+    getSingleProduct({ productId, setProduct });
+  }, []);
+
+  useEffect(() => checkProductInCart());
+
+  const checkProductInCart = () => {
+    const inCart = cartState.some(({ _id }) => productId === _id);
+    setIsProductInCart((prevState) => inCart);
+  };
   return (
     <>
       <Navbar />
@@ -20,14 +33,14 @@ const SingleProductPage = () => {
           <div>
             {
               <img
-                src={product.image}
+                src={product.productImage}
                 alt=""
                 className="single_product_image"
               />
             }
             {
               <img
-                src={product.image}
+                src={product.productImage}
                 alt=""
                 className="single_product_image"
               />
@@ -43,9 +56,16 @@ const SingleProductPage = () => {
               eveniet sint quam eum cumque, earum animi expedita ad possimus
               pariatur culpa.
             </p>
-            <button className="btn" onClick={() => addToCart(product)}>
-              Add to Cart
-            </button>
+            {isProductInCart ? (
+              <button className="btn">Go to Cart</button>
+            ) : (
+              <button
+                className="btn bg-purple"
+                onClick={() => addToCart(product)}
+              >
+                Add to Cart
+              </button>
+            )}
           </div>
         </div>
       ) : (
