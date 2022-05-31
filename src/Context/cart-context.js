@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useReducer, useEffect } from "react";
+import { toast } from "react-toastify";
 import cartReducer from "../reducer/cartReducer";
 import { useAuth } from "./auth-context";
 
@@ -79,6 +80,7 @@ const CartProvider = ({ children }) => {
           payload: { products: response.data.cart },
         });
       }
+      toast.success("Item added to cart");
     } catch (err) {
       console.error(err);
     }

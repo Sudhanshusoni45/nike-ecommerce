@@ -1,6 +1,7 @@
 import axios from "axios";
 import { createContext, useReducer } from "react";
 import { useContext, useEffect } from "react";
+import { toast } from "react-toastify";
 import wishListReducer from "../reducer/wishlistReducer";
 import { useAuth } from "./auth-context";
 
@@ -34,8 +35,9 @@ const WishlistProvider = ({ children }) => {
           type: "ADD_TO_WISHLIST",
           payload: response.data.wishlist,
         });
+        toast.success("Item added to wishlist");
       } else {
-        alert("Please Login to use wishlist");
+        toast.warning("please login to add items to wishlist");
       }
     } catch (err) {
       console.error(err);

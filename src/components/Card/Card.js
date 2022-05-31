@@ -57,9 +57,10 @@ const Card = ({
             {inWishlist && (
               <i
                 className="fas fa-heart wishlist-heart"
-                onClick={() => {
+                onClick={(e) => {
                   fromWishlist ? null : setInWishlist(false);
                   deleteFromWishlist(_id);
+                  e.stopPropagation();
                 }}
               ></i>
             )}
@@ -68,7 +69,7 @@ const Card = ({
               <i
                 className="fa fa-heart-o wishlist-heart"
                 aria-hidden="true"
-                onClick={() => {
+                onClick={(e) => {
                   setInWishlist(true);
 
                   addToWishList({
@@ -79,6 +80,7 @@ const Card = ({
                     inWishlist,
                     rating,
                   });
+                  e.stopPropagation();
                 }}
               ></i>
             )}

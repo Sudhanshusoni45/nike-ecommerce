@@ -41,6 +41,7 @@ const Login = () => {
           type: "LOGIN",
           payload: { user: foundUser, token: token },
         });
+
         navigate(location?.state?.from?.pathname || "/", {
           replace: true,
         });
