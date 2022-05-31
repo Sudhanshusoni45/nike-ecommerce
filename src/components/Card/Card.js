@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useCart } from "../../Context/cart-context";
 import { useWishlist } from "../../Context/wishlist-context";
+import { useAuth } from "../../Context/auth-context";
+
 import pic from "./shoe.png";
 
 const Card = ({
@@ -22,6 +24,10 @@ const Card = ({
       item._id === _id ? setInWishlist(true) : null
     );
   };
+  const {
+    authState: { token },
+  } = useAuth();
+  const Navigate = useNavigate();
 
   useEffect(() => checkInWishlist(), []);
 
@@ -32,7 +38,6 @@ const Card = ({
     }
     return starArr;
   };
-  const Navigate = useNavigate();
   const starArr = ratingStar();
 
   const checkProductInCart = (_id) => {
@@ -115,7 +120,18 @@ const Card = ({
             ) : (
               <button
                 onClick={(e) => {
-                  addToCart({ _id, name, price, bgColor, inWishlist, rating });
+                  {
+                    token
+                      ? addToCart({
+                          _id,
+                          name,
+                          price,
+                          bgColor,
+                          inWishlist,
+                          rating,
+                        })
+                      : Navigate("/login");
+                  }
                   e.stopPropagation();
                 }}
                 className="addToCart-btn btn"
