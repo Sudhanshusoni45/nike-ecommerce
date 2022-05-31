@@ -5,6 +5,7 @@ import nikeAirBanner from "./nikeAirBanner.jpg";
 import jordan13Banner from "./jordan13Banner.jpg";
 import shoe from "./shoe.png";
 import running from "./running.png";
+import nike_logo from "./nike_logo.jpg";
 
 export {
   heroimage,
@@ -14,4 +15,5 @@ export {
   nikeAirBanner,
   shoe,
   running,
+  nike_logo,
 };

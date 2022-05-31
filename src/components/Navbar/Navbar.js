@@ -1,14 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/auth-context";
+import "./navbar.css";
 
 const Navbar = ({ searchQuery, setSearchQuery }) => {
   const {
     authState: { token, user },
-    authState,
   } = useAuth();
   const searchBarHandler = (e) => {
     setSearchQuery((prevQuery) => e.target.value);
   };
+  const { pathname } = useLocation();
   return (
     <header className="header">
       <div className="logo">
@@ -16,13 +17,15 @@ const Navbar = ({ searchQuery, setSearchQuery }) => {
           <h2>Nike</h2>
         </Link>
       </div>
-      <input
-        className="search-bar"
-        type="text"
-        placeholder="Search"
-        onChange={searchBarHandler}
-        value={searchQuery}
-      />
+      {pathname === "/productlist" ? (
+        <input
+          className="search-bar"
+          type="text"
+          placeholder="Search"
+          onChange={searchBarHandler}
+          value={searchQuery}
+        />
+      ) : null}
       <nav>
         <Link to={token ? "/logout" : "/login"}>
           <i className="fas fa-user fa-lg margin-right-xxs"></i>
