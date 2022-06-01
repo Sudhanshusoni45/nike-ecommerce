@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 import { Navbar } from "../../components";
 import { getSingleProduct } from "../../utils";
@@ -10,8 +10,6 @@ const SingleProductPage = () => {
   const [product, setProduct] = useState();
   const { addToCart, cartState } = useCart();
   const [isProductInCart, setIsProductInCart] = useState(false);
-  console.log("isProductInCart:", isProductInCart);
-  console.log("cartState:", cartState);
   const { productId } = useParams();
 
   useEffect(() => {
@@ -57,7 +55,9 @@ const SingleProductPage = () => {
               pariatur culpa.
             </p>
             {isProductInCart ? (
-              <button className="btn">Go to Cart</button>
+              <Link to="/cart">
+                <button className="btn width-100-percent">Go to Cart</button>
+              </Link>
             ) : (
               <button
                 className="btn bg-purple"

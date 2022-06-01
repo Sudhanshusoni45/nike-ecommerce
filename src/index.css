@@ -139,3 +139,6 @@ a:hover {
 .cursor-pointer {
   cursor: pointer;
 }
+.width-100-percent {
+  width: 100%;
+}

@@ -85,7 +85,7 @@ const Card = ({
               ></i>
             )}
           </div>
-          <img className="card-image" src={pic} alt={`${name}`} />
+          <img className="card-image" src={productImage} alt={`${name}`} />
         </div>
         <div className="card-details">
           <h4>{name}</h4>

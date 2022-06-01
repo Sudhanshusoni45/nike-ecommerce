@@ -3,7 +3,14 @@ import { v4 as uuid } from "uuid";
  * Product Database can be added here.
  * You can add products of your wish with different attributes
  * */
-import { running, shoe } from "../../assests";
+import {
+  jordan_1_mid,
+  nike_mercurial,
+  nike_running_shoe,
+  premier_3_FG,
+  running,
+  shoe,
+} from "../../assests";
 
 export const products = [
   {
@@ -17,21 +24,21 @@ export const products = [
   },
   {
     _id: uuid(),
-    name: "Running Zoom",
+    name: "Alphafly Zoom",
     price: 98,
     categoryName: "running",
     inWishList: false,
     rating: 3,
-    productImage: running,
+    productImage: nike_running_shoe,
   },
   {
     _id: uuid(),
-    name: "Jordan Zoom",
+    name: "Jordan 1 Mid",
     price: 97,
     categoryName: "jordans",
     inWishList: false,
     rating: 2,
-    productImage: shoe,
+    productImage: jordan_1_mid,
   },
   {
     _id: uuid(),
@@ -49,7 +56,7 @@ export const products = [
     categoryName: "football",
     inWishList: false,
     rating: 4,
-    productImage: shoe,
+    productImage: nike_mercurial,
   },
   {
     _id: uuid(),
@@ -62,12 +69,12 @@ export const products = [
   },
   {
     _id: uuid(),
-    name: "Football Zoom",
+    name: "Premier 3 FG",
     price: 901,
     categoryName: "football",
     inWishList: false,
     rating: 3,
-    productImage: shoe,
+    productImage: premier_3_FG,
   },
   {
     _id: uuid(),
