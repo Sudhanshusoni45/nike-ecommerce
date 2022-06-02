@@ -48,12 +48,7 @@ const SingleProductPage = () => {
             <h2>{product.name}</h2>
             <span>{product.categoryName}</span>
             <span>${product.price}</span>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
-              quae optio quos, rerum unde nam sit dignissimos voluptatum,
-              eveniet sint quam eum cumque, earum animi expedita ad possimus
-              pariatur culpa.
-            </p>
+            <p>{product.description}</p>
             {isProductInCart ? (
               <Link to="/cart">
                 <button className="btn width-100-percent">Go to Cart</button>

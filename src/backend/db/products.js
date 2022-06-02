@@ -38,6 +38,8 @@ export const products = [
     categoryName: "jordans",
     inWishList: false,
     rating: 2,
+    description:
+      "Give your look an edge, in the Air Jordan 1 Mid SE.Made from premium leather throughout, it features an updated colour scheme, making a fresh play on the all-time favourite Full-grain leather in the upper provides classic style and durability, Encapsulated Air unit in the heel offers lightweight cushioning Rubber tread gives you durable traction.",
     productImage: jordan_1_mid,
   },
   {
@@ -47,7 +49,7 @@ export const products = [
     categoryName: "jordans",
     inWishList: false,
     rating: 1,
-    productImage: running,
+    productImage: shoe,
   },
   {
     _id: uuid(),
