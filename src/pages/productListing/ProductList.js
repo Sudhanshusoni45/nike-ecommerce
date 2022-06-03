@@ -20,7 +20,7 @@ const ProductList = () => {
   const ratingData = ratingFilter(priceFilterData);
   const sortedData = getSortData(ratingData);
   const searchedData = searchHandler({ sortedData, searchQuery });
-
+  scroll(0, 0);
   return (
     <>
       <Navbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />

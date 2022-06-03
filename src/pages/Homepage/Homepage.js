@@ -1,8 +1,5 @@
-import { Card, Footer, Navbar } from "../../components";
+import { Footer, Navbar } from "../../components";
 import {
-  heroimage,
-  menCategory,
-  womenCategory,
   nikeAirBanner,
   nike_jordan_category,
   nike_running_category,
@@ -10,8 +7,25 @@ import {
 } from "../../assests";
 import "./Homepage.css";
 import { Link } from "react-router-dom";
+import { useFilters } from "../../Context/filter-context";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { getProductsHandler } from "../../utils";
+import { useProducts } from "../../Context/product-context";
 
 const Homepage = () => {
+  const { filterDispatch } = useFilters();
+  const Navigate = useNavigate();
+  const { productDispatch } = useProducts();
+
+  const showCategoryProducts = (type) => {
+    filterDispatch({ type: "RESET" });
+    filterDispatch({ type: type, payload: true });
+    Navigate("/productlist");
+  };
+
+  useEffect(() => getProductsHandler({ productDispatch }), []);
+
   return (
     <>
       <Navbar />
@@ -20,7 +34,10 @@ const Homepage = () => {
       </div>
 
       <div className="category-container">
-        <div className="category-card">
+        <div
+          className="category-card"
+          onClick={() => showCategoryProducts("JORDANS")}
+        >
           <img src={nike_jordan_category} alt="" className="category-image" />
           <h2 className="category-name">Jordans</h2>
           <Link to={"/productlist"}>
@@ -30,7 +47,10 @@ const Homepage = () => {
           </Link>
         </div>
 
-        <div className="category-card">
+        <div
+          className="category-card"
+          onClick={() => showCategoryProducts("RUNNING")}
+        >
           <img src={nike_running_category} alt="" className="category-image" />
           <h2 className="category-name">Running</h2>
           <Link to={"/productlist"}>
@@ -41,17 +61,10 @@ const Homepage = () => {
         </div>
       </div>
 
-      {/* <div className="new-arrivals-container">
-        <h1>New Arrivals</h1>
-        <div className="new-arrivals-grid">
-          <Card name={"New Arrival"} price={"100"} rating={4} />
-          <Card name={"New Arrival"} price={"100"} rating={4} />
-          <Card name={"New Arrival"} price={"100"} rating={4} />
-          <Card name={"New Arrival"} price={"100"} rating={4} />
-          <Card name={"New Arrival"} price={"100"} rating={4} />
-        </div>
-      </div> */}
-      <div className="banner-second">
+      <div
+        className="banner-second"
+        onClick={() => showCategoryProducts("FOOTBALL")}
+      >
         <img src={football_banner} alt="" className="banner-second-image" />
       </div>
       <Footer />
