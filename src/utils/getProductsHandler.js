@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const getProductsHandler = async ({ productDispatch }) => {
+const getProductsHandler = async (productDispatch) => {
   try {
     const url = "/api/products";
     const response = await axios.get(url);

@@ -2,6 +2,7 @@
 .hero {
   display: flex;
   justify-content: space-around;
+  position: relative;
 }
 .hero img {
   width: 95%;
@@ -61,4 +62,11 @@
   gap: var(--space-md);
   justify-content: center;
   padding: 0 5rem;
+}
+.hero .all_products_btn {
+  position: absolute;
+  right: 9rem;
+  bottom: 2rem;
+  background-color: var(--white-color);
+  color: var(--black-color);
 }

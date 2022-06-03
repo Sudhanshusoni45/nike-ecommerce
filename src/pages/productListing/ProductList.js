@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import { Card, Navbar, FilterSideBar } from "../../components";
-import useAxios from "../../CustomHooks/useAxios";
+import { useProducts } from "../../Context/product-context";
 import {
   categoryFilter,
+  getProductsHandler,
   getSortData,
   priceFilter,
   ratingFilter,
@@ -10,7 +12,8 @@ import {
 } from "../../utils";
 
 const ProductList = () => {
-  useAxios("/api/products", "get");
+  const { productDispatch } = useProducts();
+  useEffect(() => getProductsHandler(productDispatch), []);
 
   const bgColors = ["bg-yellow", "bg-blue", "bg-pink", "bg-green", "bg-orange"];
   const [searchQuery, setSearchQuery] = useState();

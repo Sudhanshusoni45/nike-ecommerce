@@ -24,13 +24,19 @@ const Homepage = () => {
     Navigate("/productlist");
   };
 
-  useEffect(() => getProductsHandler({ productDispatch }), []);
+  useEffect(() => getProductsHandler(productDispatch), []);
 
   return (
     <>
       <Navbar />
       <div className="hero">
-        <img src={nikeAirBanner} alt="" />
+        <img src={nikeAirBanner} alt="" className="hero_banner_image" />
+        <button
+          className="all_products_btn btn"
+          onClick={() => Navigate("/productlist")}
+        >
+          See All Product
+        </button>
       </div>
 
       <div className="category-container">
