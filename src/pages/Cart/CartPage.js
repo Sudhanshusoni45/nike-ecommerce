@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { CartItem, Navbar } from "../../components";
 import { useCart } from "../../Context/cart-context";
 
 const CartPage = () => {
   const { cartState } = useCart();
   const [billPrice, setBillPrice] = useState(0);
+  const Navigate = useNavigate();
 
   const billHandler = () => {
     let totalPrice = 0;
@@ -13,7 +15,7 @@ const CartPage = () => {
       totalPrice = totalPrice + element.qty * element.price;
     });
     console.log("totalPrice:", totalPrice);
-    setBillPrice(totalPrice);
+    setBillPrice((prevState) => totalPrice);
   };
 
   const displayRazorpay = async () => {
@@ -26,16 +28,17 @@ const CartPage = () => {
     }
     const options = {
       key: "rzp_test_UetVgthB7AKi3k",
-      amount: "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      key_id: "rzp_test_UetVgthB7AKi3k",
+      key_secret: "vzdbUqbn3UDW081dWSO0lYOm",
+      amount: (billPrice - 50) * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
       currency: "INR",
-      name: "Nike Shoe",
+      name: "Nike Ecommerce",
       description: "Test Transaction",
       image: "https://example.com/your_logo",
-      order_id: "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-      handler: function (response) {
-        alert(response.razorpay_payment_id);
-        alert(response.razorpay_order_id);
-        alert(response.razorpay_signature);
+
+      handler: function () {
+        Navigate("/productlist");
+        toast.success("Order Placed Successfully");
       },
       prefill: {
         name: "Gaurav Kumar",
