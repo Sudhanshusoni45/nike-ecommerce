@@ -14,8 +14,7 @@ const CartPage = () => {
     cartState.forEach((element) => {
       totalPrice = totalPrice + element.qty * element.price;
     });
-    console.log("totalPrice:", totalPrice);
-    setBillPrice((prevState) => totalPrice);
+    setBillPrice(totalPrice);
   };
 
   const displayRazorpay = async () => {
