@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../../Context/cart-context";
 import { useWishlist } from "../../Context/wishlist-context";
 import { useAuth } from "../../Context/auth-context";
-
-import pic from "./shoe.png";
 
 const Card = ({
   _id,
@@ -79,6 +77,7 @@ const Card = ({
                     bgColor,
                     inWishlist,
                     rating,
+                    productImage,
                   });
                   e.stopPropagation();
                 }}
@@ -99,9 +98,18 @@ const Card = ({
         </div>
         {fromWishlist ? (
           <button
-            onClick={() => {
-              addToCart({ _id, name, price, bgColor, inWishlist, rating });
+            onClick={(e) => {
+              addToCart({
+                _id,
+                name,
+                price,
+                bgColor,
+                inWishlist,
+                rating,
+                productImage,
+              });
               deleteFromWishlist(_id);
+              e.stopPropagation();
             }}
             className="addToCart-btn btn"
           >
@@ -131,6 +139,7 @@ const Card = ({
                           bgColor,
                           inWishlist,
                           rating,
+                          productImage,
                         })
                       : Navigate("/login");
                   }

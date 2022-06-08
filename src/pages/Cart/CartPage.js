@@ -78,18 +78,21 @@ const CartPage = () => {
       <div className="cart-container">
         <div className="cart-item-container">
           {cartState.length !== 0 ? (
-            cartState.map(({ name, _id, price, rating, bgColor, qty }) => (
-              <li key={_id}>
-                <CartItem
-                  name={name}
-                  price={price}
-                  rating={rating}
-                  _id={_id}
-                  bgColor={bgColor}
-                  qty={qty}
-                />
-              </li>
-            ))
+            cartState.map(
+              ({ name, _id, price, rating, bgColor, qty, productImage }) => (
+                <li key={_id}>
+                  <CartItem
+                    name={name}
+                    price={price}
+                    rating={rating}
+                    _id={_id}
+                    bgColor={bgColor}
+                    qty={qty}
+                    productImage={productImage}
+                  />
+                </li>
+              )
+            )
           ) : (
             <h1>
               Feels very empty in here, add items to cart to fill this place
