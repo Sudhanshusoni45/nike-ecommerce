@@ -41,8 +41,8 @@ const CartPage = () => {
         cartState.map(({ _id }) => removeFromCart(_id));
       },
       prefill: {
-        name: "Gaurav Kumar",
-        email: "gaurav.kumar@example.com",
+        name: "john doe",
+        email: "johndoe@example.com",
         contact: "9999999999",
       },
       notes: {
