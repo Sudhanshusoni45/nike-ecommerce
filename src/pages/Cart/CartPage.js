@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { CartItem, Navbar } from "../../components";
 import { useCart } from "../../Context/cart-context";
 
 const CartPage = () => {
-  const { cartState } = useCart();
+  const { cartState, removeFromCart } = useCart();
   const [billPrice, setBillPrice] = useState(0);
   const Navigate = useNavigate();
 
@@ -28,7 +29,7 @@ const CartPage = () => {
       key: "rzp_test_UetVgthB7AKi3k",
       key_id: "rzp_test_UetVgthB7AKi3k",
       key_secret: "vzdbUqbn3UDW081dWSO0lYOm",
-      amount: (billPrice - 50) * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      amount: (billPrice - 50) * 100,
       currency: "INR",
       name: "Nike Ecommerce",
       description: "Test Transaction",
@@ -37,6 +38,7 @@ const CartPage = () => {
       handler: function () {
         Navigate("/productlist");
         toast.success("Order Placed Successfully");
+        cartState.map(({ _id }) => removeFromCart(_id));
       },
       prefill: {
         name: "Gaurav Kumar",
