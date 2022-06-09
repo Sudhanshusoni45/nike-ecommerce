@@ -2,7 +2,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { RequiresAuth } from "./components";
 import MockAPI from "./pages/Mockman/Mockman";
-import "react-toastify/dist/ReactToastify.css";
+// import "react-toastify/dist/ReactToastify.css";
 
 import {
   CartPage,
@@ -14,19 +14,19 @@ import {
   SingleProductPage,
   Wishlist,
 } from "./pages";
-import { ToastContainer } from "react-toastify";
+// import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <div className="App">
-      <ToastContainer
+      {/* <ToastContainer
         theme="light"
         position="bottom-right"
         autoClose={2000}
         newestOnTop={true}
         closeOnClick
         pauseOnHover={false}
-      />
+      /> */}
       <Routes>
         <Route path="/productlist" element={<ProductList />} />
         <Route path="/login" element={<Login />} />
