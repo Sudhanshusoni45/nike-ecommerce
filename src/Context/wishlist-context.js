@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createContext, useReducer } from "react";
 import { useContext, useEffect } from "react";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 import wishListReducer from "../reducer/wishlistReducer";
 import { useAuth } from "./auth-context";
 

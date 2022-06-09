@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useReducer, useEffect } from "react";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 import cartReducer from "../reducer/cartReducer";
 import { useAuth } from "./auth-context";
 
