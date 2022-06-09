@@ -2,7 +2,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { RequiresAuth } from "./components";
 import MockAPI from "./pages/Mockman/Mockman";
-// import "react-toastify/dist/ReactToastify.css";
+import "react-toastify/dist/ReactToastify.css";
 
 import {
   CartPage,
