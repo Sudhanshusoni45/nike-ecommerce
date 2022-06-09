@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useReducer, useEffect } from "react";
+import { toast } from "react-toastify";
 import cartReducer from "../reducer/cartReducer";
 import { useAuth } from "./auth-context";
 
@@ -26,7 +27,7 @@ const CartProvider = ({ children }) => {
         });
       }
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 
@@ -61,7 +62,6 @@ const CartProvider = ({ children }) => {
           data,
           config
         );
-        console.log("response from itemInCart:", response);
 
         cartDispatch({
           type: "ADD_TO_CART",
@@ -80,8 +80,9 @@ const CartProvider = ({ children }) => {
           payload: { products: response.data.cart },
         });
       }
+      toast.success("Item added to cart");
     } catch (err) {
-      console.log("from add to cart catch", err);
+      console.error(err);
     }
   };
 
@@ -99,14 +100,12 @@ const CartProvider = ({ children }) => {
           payload: { products: response.data.cart },
         });
       }
-      console.log("response:", response);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 
   const incrementQuantity = async (_id) => {
-    console.log("increment quantity");
     try {
       const config = {
         headers: {
@@ -127,7 +126,7 @@ const CartProvider = ({ children }) => {
         });
       }
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 

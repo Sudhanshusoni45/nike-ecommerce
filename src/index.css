@@ -42,10 +42,9 @@ li {
 .bg-purple {
   background: var(--dark-purple);
 }
-.bg-black{
+.bg-black {
   background: #2e2e2e;
 }
-
 
 body {
   background: var(--bg-grey-color);
@@ -53,7 +52,9 @@ body {
 }
 
 /* Utility */
-
+.margin-left-small {
+  margin-left: var(--space-xs);
+}
 .margin-left-xxs {
   margin-left: var(--space-xxs);
 }
@@ -126,15 +127,21 @@ body {
   font-size: larger;
   flex-direction: column;
 }
-
 a:hover {
   color: var(--dark-purple);
 }
-
 .index-container h3 {
   margin-bottom: var(--space-xxs);
 }
-
 .primary-btn {
   background-color: var(--dark-purple);
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.width-100-percent {
+  width: 100%;
+}
+.horizontal-ecomm-card {
+  margin-top: 0;
 }

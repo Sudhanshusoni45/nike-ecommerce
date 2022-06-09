@@ -1,9 +1,16 @@
 import { v4 as uuid } from "uuid";
-
 /**
  * Product Database can be added here.
  * You can add products of your wish with different attributes
  * */
+import {
+  jordan_1_mid,
+  nike_mercurial,
+  nike_running_shoe,
+  premier_3_FG,
+  running,
+  shoe,
+} from "../../assests";
 
 export const products = [
   {
@@ -13,22 +20,27 @@ export const products = [
     categoryName: "running",
     inWishList: true,
     rating: 4,
+    productImage: shoe,
   },
   {
     _id: uuid(),
-    name: "Running Zoom",
+    name: "Alphafly Zoom",
     price: 98,
     categoryName: "running",
     inWishList: false,
     rating: 3,
+    productImage: nike_running_shoe,
   },
   {
     _id: uuid(),
-    name: "Jordan Zoom",
+    name: "Jordan 1 Mid",
     price: 97,
     categoryName: "jordans",
     inWishList: false,
     rating: 2,
+    description:
+      "Give your look an edge, in the Air Jordan 1 Mid SE.Made from premium leather throughout, it features an updated colour scheme, making a fresh play on the all-time favourite Full-grain leather in the upper provides classic style and durability, Encapsulated Air unit in the heel offers lightweight cushioning Rubber tread gives you durable traction.",
+    productImage: jordan_1_mid,
   },
   {
     _id: uuid(),
@@ -37,6 +49,7 @@ export const products = [
     categoryName: "jordans",
     inWishList: false,
     rating: 1,
+    productImage: shoe,
   },
   {
     _id: uuid(),
@@ -45,6 +58,7 @@ export const products = [
     categoryName: "football",
     inWishList: false,
     rating: 4,
+    productImage: nike_mercurial,
   },
   {
     _id: uuid(),
@@ -53,14 +67,16 @@ export const products = [
     categoryName: "football",
     inWishList: false,
     rating: 4,
+    productImage: shoe,
   },
   {
     _id: uuid(),
-    name: "Football Zoom",
+    name: "Premier 3 FG",
     price: 901,
     categoryName: "football",
     inWishList: false,
     rating: 3,
+    productImage: premier_3_FG,
   },
   {
     _id: uuid(),
@@ -69,6 +85,7 @@ export const products = [
     categoryName: "basketball",
     inWishList: false,
     rating: 1,
+    productImage: shoe,
   },
   {
     _id: uuid(),
@@ -77,6 +94,7 @@ export const products = [
     categoryName: "basketball",
     inWishList: false,
     rating: 3,
+    productImage: shoe,
   },
   {
     _id: uuid(),
@@ -85,6 +103,7 @@ export const products = [
     categoryName: "basketball",
     inWishList: false,
     rating: 2,
+    productImage: shoe,
   },
   {
     _id: uuid(),
@@ -93,6 +112,7 @@ export const products = [
     categoryName: "walking",
     inWishList: false,
     rating: 3,
+    productImage: shoe,
   },
   {
     _id: uuid(),
@@ -101,6 +121,7 @@ export const products = [
     categoryName: "walking",
     inWishList: false,
     rating: 4,
+    productImage: shoe,
   },
   {
     _id: uuid(),
@@ -109,5 +130,6 @@ export const products = [
     categoryName: "jordans",
     inWishList: false,
     rating: 3,
+    productImage: shoe,
   },
 ];

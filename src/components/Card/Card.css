@@ -9,6 +9,7 @@
   padding: 1rem;
   align-items: center;
   flex-flow: column;
+  cursor: pointer;
 }
 
 .product-card {
@@ -57,6 +58,7 @@
   width: 12rem;
   margin-top: 0.4rem;
 }
+
 
 .wishlist-heart {
   z-index: 1;

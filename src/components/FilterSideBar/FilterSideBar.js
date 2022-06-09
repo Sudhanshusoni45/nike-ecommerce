@@ -1,4 +1,5 @@
 import { useFilters } from "../../Context/filter-context";
+import "./filterSideBar.css";
 
 const FilterSideBar = () => {
   const { filterState, filterDispatch } = useFilters();
@@ -28,8 +29,9 @@ const FilterSideBar = () => {
             <div>
               <input
                 type="checkbox"
-                name="category"
+                name="jordans"
                 id="jordans"
+                className="cursor-pointer"
                 checked={jordans}
                 onChange={(e) => {
                   e.target.checked
@@ -38,13 +40,16 @@ const FilterSideBar = () => {
                 }}
               />
 
-              <label htmlFor="running">Jordan</label>
+              <label htmlFor="jordans" className="cursor-pointer">
+                Jordan
+              </label>
             </div>
             <div>
               <input
                 type="checkbox"
                 name="category"
                 id="running"
+                className="cursor-pointer"
                 checked={running}
                 onChange={(e) => {
                   e.target.checked
@@ -52,13 +57,16 @@ const FilterSideBar = () => {
                     : filterDispatch({ type: "RUNNING", payload: false });
                 }}
               />
-              <label htmlFor="running">Running</label>
+              <label htmlFor="running" className="cursor-pointer">
+                Running
+              </label>
             </div>
             <div>
               <input
                 type="checkbox"
                 name="category"
                 id="basketball"
+                className="cursor-pointer"
                 checked={basketball}
                 onChange={(e) => {
                   e.target.checked
@@ -66,12 +74,15 @@ const FilterSideBar = () => {
                     : filterDispatch({ type: "BASKETBALL", payload: false });
                 }}
               />
-              <label htmlFor="basketball">Basketball</label>
+              <label htmlFor="basketball" className="cursor-pointer">
+                Basketball
+              </label>
             </div>
             <div>
               <input
                 type="checkbox"
                 name="category"
+                className="cursor-pointer"
                 checked={football}
                 id="football"
                 onChange={(e) => {
@@ -80,12 +91,15 @@ const FilterSideBar = () => {
                     : filterDispatch({ type: "FOOTBALL", payload: false });
                 }}
               />
-              <label htmlFor="football">Football</label>
+              <label htmlFor="football" className="cursor-pointer">
+                Football
+              </label>
             </div>
             <div>
               <input
                 type="checkbox"
                 name="category"
+                className="cursor-pointer"
                 checked={walking}
                 id="walking"
                 onChange={(e) => {
@@ -94,7 +108,9 @@ const FilterSideBar = () => {
                     : filterDispatch({ type: "WALKING", payload: false });
                 }}
               />
-              <label htmlFor="walking">Walking</label>
+              <label htmlFor="walking" className="cursor-pointer">
+                Walking
+              </label>
             </div>
           </ul>
         </div>
@@ -107,6 +123,7 @@ const FilterSideBar = () => {
             min="0"
             max="1000"
             value={rangeValue}
+            className="cursor-pointer"
             onChange={(e) =>
               filterDispatch({ type: "PRICE_FILTER", payload: e.target.value })
             }
@@ -120,10 +137,13 @@ const FilterSideBar = () => {
               type="radio"
               name="sortByPrice"
               id="lowToHigh"
+              className="cursor-pointer"
               checked={sortBy === "LOW_TO_HIGH" ? true : false}
               onChange={() => filterDispatch({ type: "LOW_TO_HIGH" })}
             />
-            <label htmlFor="lowToHigh">Price-Low to High</label>
+            <label htmlFor="lowToHigh" className="cursor-pointer">
+              Price-Low to High
+            </label>
           </div>
 
           <div>
@@ -131,10 +151,13 @@ const FilterSideBar = () => {
               id="highToLow"
               type="radio"
               name="sortByPrice"
+              className="cursor-pointer"
               checked={sortBy === "HIGH_TO_LOW" ? true : false}
               onChange={() => filterDispatch({ type: "HIGH_TO_LOW" })}
             />
-            <label htmlFor="highToLow">Price-High to Low</label>
+            <label htmlFor="highToLow" className="cursor-pointer">
+              Price-High to Low
+            </label>
           </div>
         </div>
         <h3>Rating</h3>
@@ -144,12 +167,16 @@ const FilterSideBar = () => {
             id="fourStarAbove"
             name="sortByRating"
             value="4"
+            className="cursor-pointer"
             checked={rating === 4 ? true : false}
             onChange={() =>
               filterDispatch({ type: "RATING_FILTER", payload: { value: 4 } })
             }
           />
-          <label className="margin-left-xxs" htmlFor="fourStarAbove">
+          <label
+            className="margin-left-xxs cursor-pointer"
+            htmlFor="fourStarAbove"
+          >
             4 Stars & above
           </label>
         </div>
@@ -159,12 +186,16 @@ const FilterSideBar = () => {
             type="radio"
             name="sortByRating"
             value="3"
+            className="cursor-pointer"
             checked={rating === 3 ? true : false}
             onChange={() =>
               filterDispatch({ type: "RATING_FILTER", payload: { value: 3 } })
             }
           />
-          <label className="margin-left-xxs" htmlFor="threeStarAbove">
+          <label
+            className="margin-left-xxs cursor-pointer"
+            htmlFor="threeStarAbove"
+          >
             3 Stars & above
           </label>
         </div>
@@ -174,12 +205,16 @@ const FilterSideBar = () => {
             name="sortByRating"
             id="twoStarAbove"
             value="2"
+            className="cursor-pointer"
             checked={rating === 2 ? true : false}
             onChange={() =>
               filterDispatch({ type: "RATING_FILTER", payload: { value: 2 } })
             }
           />
-          <label className="margin-left-xxs" htmlFor="twoStarAbove">
+          <label
+            className="margin-left-xxs cursor-pointer"
+            htmlFor="twoStarAbove"
+          >
             2 Stars & above
           </label>
         </div>
@@ -189,12 +224,16 @@ const FilterSideBar = () => {
             type="radio"
             name="sortByRating"
             value="1"
+            className="cursor-pointer"
             checked={rating === 1 ? true : false}
             onChange={() =>
               filterDispatch({ type: "RATING_FILTER", payload: { value: 1 } })
             }
           />
-          <label className="margin-left-xxs" htmlFor="oneStarAbove">
+          <label
+            className="margin-left-xxs cursor-pointer"
+            htmlFor="oneStarAbove"
+          >
             1 Stars & above
           </label>
         </div>

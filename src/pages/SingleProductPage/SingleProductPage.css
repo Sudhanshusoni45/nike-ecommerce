@@ -1,0 +1,19 @@
+.single_product_image{
+    width: 20rem;
+    border-radius: 1rem;
+    background: rgb(235, 235, 235);
+    margin-left: var(--space-sm);
+}
+.single_product_page_container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    justify-content: center;
+    margin-top: var(--space-xxl);
+}
+.single_product_details{
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    gap: var(--space-xs);
+}

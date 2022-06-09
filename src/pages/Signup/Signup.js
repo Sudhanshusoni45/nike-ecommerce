@@ -21,7 +21,6 @@ const Signup = () => {
         password: newUser.password,
       });
 
-      console.log(response);
       const { status } = response;
       const { encodedToken: token } = response.data;
       const { createdUser } = response.data;
@@ -42,7 +41,7 @@ const Signup = () => {
         throw new Error("Server Error");
       }
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 

@@ -4,7 +4,7 @@ import { useWishlist } from "../../Context/wishlist-context";
 import "./cartItem.css";
 import pic from "./shoe.png";
 
-const CartItem = ({ name, _id, price, rating, bgColor, qty }) => {
+const CartItem = ({ name, _id, price, rating, bgColor, qty, productImage }) => {
   const { removeFromCart, addToCart, incrementQuantity, decrementQuantity } =
     useCart();
   const { addToWishList } = useWishlist();
@@ -13,7 +13,7 @@ const CartItem = ({ name, _id, price, rating, bgColor, qty }) => {
     <>
       <div className="horizontal-ecomm-card">
         <div className={`horizontal-card-image-bg ${bgColor}`}>
-          <img className="card-image" src={pic} alt="jordan shoe" />
+          <img className="card-image" src={productImage} alt={name} />
         </div>
         <div className="horizontal-card-details">
           <h3>{name}</h3>
@@ -45,7 +45,14 @@ const CartItem = ({ name, _id, price, rating, bgColor, qty }) => {
 
           <button
             onClick={() => {
-              addToWishList({ name, _id, price, rating, bgColor });
+              addToWishList({
+                name,
+                _id,
+                price,
+                rating,
+                bgColor,
+                productImage,
+              });
               removeFromCart(_id);
             }}
             className="btn"
