@@ -10,6 +10,7 @@ import {
   ratingFilter,
   searchHandler,
 } from "../../utils";
+import "./productList.css";
 
 const ProductList = () => {
   const { productDispatch } = useProducts();

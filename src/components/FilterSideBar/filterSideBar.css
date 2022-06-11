@@ -2,4 +2,7 @@
   position: sticky;
   top: 4.2rem;
   height: 50rem;
+  background: var(--white-color);
+  padding: var(--space-md);
+  width: 18rem;
 }
