@@ -1,7 +1,9 @@
 .cart-container {
   display: flex;
-  width: 60%;
+  width: 100%;
   margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-sm);
   margin-top: var(--space-md);
 }
@@ -17,6 +19,7 @@
   width: 30rem;
   height: 18.5rem;
   background: var(--white-color);
+  /* background-color: red; */
   padding: var(--space-sm);
   display: flex;
   flex-flow: column;
@@ -24,6 +27,7 @@
 }
 
 .price-details-grid {
+  width: 30rem;
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: var(--space-xxs);

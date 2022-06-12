@@ -11,7 +11,11 @@ const Navbar = ({ searchQuery, setSearchQuery }) => {
   };
   const { pathname } = useLocation();
   return (
-    <header className="header">
+    <header
+      className={
+        pathname === "/productlist" ? "extra_padding header" : "header"
+      }
+    >
       <div className="logo">
         <Link to="/">
           <h2>Nike</h2>

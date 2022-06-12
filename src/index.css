@@ -90,13 +90,6 @@ body {
 }
 /* sidebar */
 
-.ecomm-sidebar {
-  background: var(--white-color);
-  padding: var(--space-md);
-  width: 20%;
-  max-width: 25rem;
-}
-
 .sidebar-filters {
   margin-bottom: var(--space-xs);
 }
