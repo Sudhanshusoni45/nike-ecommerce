@@ -1,14 +1,14 @@
 import "./login.css";
 import { Navbar } from "../../components";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import axios from "axios";
+import { useEffect, useState } from "react";
 import { useAuth } from "../../context/auth-context";
+import { loginHandler } from "../../utils";
 
 const Login = () => {
   const location = useLocation();
   const { authDispatch } = useAuth();
-  const navigate = useNavigate();
+  const Navigate = useNavigate();
 
   const [user, setUser] = useState({
     email: "sudhanshu@gmail.com",
@@ -21,42 +21,10 @@ const Login = () => {
     setUser({ ...user, [name]: value });
   };
 
-  const loginHandler = async (e) => {
+  const clickHandler = (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post("/api/auth/login", {
-        email: `${user.email}`,
-        password: `${user.password}`,
-      });
-
-      const { status } = response;
-      const { encodedToken: token } = response.data;
-      const { foundUser } = response.data;
-
-      if (status === 200) {
-        localStorage.setItem("token", token);
-        localStorage.setItem("user", JSON.stringify(foundUser));
-
-        authDispatch({
-          type: "LOGIN",
-          payload: { user: foundUser, token: token },
-        });
-
-        navigate(location?.state?.from?.pathname || "/", {
-          replace: true,
-        });
-      } else if (status === 404) {
-        throw new Error("Email is not registered");
-      } else if (status === 401) {
-        throw new Error("Password incorrect");
-      } else if (status === 500) {
-        throw new Error("Server Error");
-      }
-    } catch (err) {
-      console.error(err);
-    }
+    loginHandler({ authDispatch, user, Navigate });
   };
-
   return (
     <>
       <Navbar />
@@ -94,7 +62,9 @@ const Login = () => {
           </a>
           <Link to={"/signup"}> New here? Create a new account </Link>
 
-          <button className="btn login-btn">Login</button>
+          <button className="btn login-btn" onClick={clickHandler}>
+            Login
+          </button>
         </form>
       </div>
     </>

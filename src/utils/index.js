@@ -7,3 +7,5 @@ export { searchHandler } from "./searchHandler";
 // product
 export { getSingleProduct } from "./getSingleProduct";
 export { getProductsHandler } from "./getProductsHandler";
+// auth
+export { loginHandler } from "./auth/loginHandler";
