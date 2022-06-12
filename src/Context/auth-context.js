@@ -11,6 +11,7 @@ const initialState = {
     : null,
 };
 
+console.log("initialState:", initialState);
 const AuthProvider = ({ children }) => {
   const [authState, authDispatch] = useReducer(authReducer, initialState);
 
