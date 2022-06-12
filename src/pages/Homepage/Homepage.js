@@ -44,7 +44,11 @@ const Homepage = () => {
           className="category-card"
           onClick={() => showCategoryProducts("JORDANS")}
         >
-          <img src={nike_jordan_category} alt="" className="category-image" />
+          <img
+            src={nike_jordan_category}
+            alt="jordan shoe category"
+            className="category-image"
+          />
           <h2 className="category-name">Jordans</h2>
           <Link to={"/productlist"}>
             <button className="btn bg-black category-card-button">
@@ -71,7 +75,11 @@ const Homepage = () => {
         className="banner-second"
         onClick={() => showCategoryProducts("FOOTBALL")}
       >
-        <img src={football_banner} alt="" className="banner-second-image" />
+        <img
+          src={football_banner}
+          alt="foot ball shoes"
+          className="banner-second-image"
+        />
       </div>
       <Footer />
     </>
