@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useCart } from "../../Context/cart-context";
-import { useWishlist } from "../../Context/wishlist-context";
-import { useAuth } from "../../Context/auth-context";
+import { useCart } from "../../context/cart-context";
+import { useWishlist } from "../../context/wishlist-context";
+import { useAuth } from "../../context/auth-context";
 
 const Card = ({
   _id,

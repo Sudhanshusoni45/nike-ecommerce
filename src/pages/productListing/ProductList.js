@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { Card, Navbar, FilterSideBar } from "../../components";
-import { useProducts } from "../../Context/product-context";
+import { useProducts } from "../../context/product-context";
 import {
   categoryFilter,
   getProductsHandler,

@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Navbar } from "../../components";
 import axios from "axios";
-import { useAuth } from "../../Context/auth-context";
+import { useAuth } from "../../context/auth-context";
 const Signup = () => {
   const [newUser, setNewUser] = useState("");
   const { authDispatch } = useAuth();

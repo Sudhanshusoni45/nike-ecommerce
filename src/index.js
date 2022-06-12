@@ -5,12 +5,12 @@ import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
 import "../src/index.css";
 
-import { ProductProvider } from "./Context/product-context";
+import { ProductProvider } from "./context/product-context";
 
-import { FilterPovider } from "./Context/filter-context";
-import { AuthProvider } from "./Context/auth-context";
-import { WishlistProvider } from "./Context/wishlist-context";
-import { CartProvider } from "./Context/cart-context";
+import { FilterPovider } from "./context/filter-context";
+import { AuthProvider } from "./context/auth-context";
+import { WishlistProvider } from "./context/wishlist-context";
+import { CartProvider } from "./context/cart-context";
 
 // Call make Server
 makeServer();

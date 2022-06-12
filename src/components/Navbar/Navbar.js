@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useAuth } from "../../Context/auth-context";
+import { useAuth } from "../../context/auth-context";
 import "./navbar.css";
 
 const Navbar = ({ searchQuery, setSearchQuery }) => {

@@ -1,5 +1,5 @@
-import { useFilters } from "../Context/filter-context";
-import { useProducts } from "../Context/product-context";
+import { useFilters } from "../context/filter-context";
+import { useProducts } from "../context/product-context";
 
 const categoryFilter = () => {
   const { filterState } = useFilters();

@@ -1,4 +1,4 @@
-import { useFilters } from "../../Context/filter-context";
+import { useFilters } from "../../context/filter-context";
 import "./filterSideBar.css";
 
 const FilterSideBar = () => {

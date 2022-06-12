@@ -3,7 +3,7 @@ import { Navbar } from "../../components";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
-import { useAuth } from "../../Context/auth-context";
+import { useAuth } from "../../context/auth-context";
 
 const Login = () => {
   const location = useLocation();

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useCart } from "../../Context/cart-context";
-import { useWishlist } from "../../Context/wishlist-context";
+import { useCart } from "../../context/cart-context";
+import { useWishlist } from "../../context/wishlist-context";
 import "./cartItem.css";
 import pic from "./shoe.png";
 

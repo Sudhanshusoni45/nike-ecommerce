@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { CartItem, Navbar } from "../../components";
-import { useCart } from "../../Context/cart-context";
+import { useCart } from "../../context/cart-context";
 
 const CartPage = () => {
   const { cartState, removeFromCart } = useCart();

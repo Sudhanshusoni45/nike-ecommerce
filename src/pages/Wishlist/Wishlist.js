@@ -2,12 +2,11 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Card, FilterSideBar, Navbar } from "../../components";
-import { useAuth } from "../../Context/auth-context";
-import { useWishlist } from "../../Context/wishlist-context";
+import { useAuth } from "../../context/auth-context";
+import { useWishlist } from "../../context/wishlist-context";
 
 const Wishlist = () => {
   const { wishlistState } = useWishlist();
-  console.log("wishlistState:", wishlistState);
   const { authState } = useAuth();
 
   const bgColors = ["bg-yellow", "bg-blue", "bg-pink", "bg-green", "bg-orange"];

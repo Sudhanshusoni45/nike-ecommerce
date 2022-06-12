@@ -4,7 +4,7 @@ import { Navbar } from "../../components";
 import { getSingleProduct } from "../../utils";
 import { useEffect } from "react";
 import "./SingleProductPage.css";
-import { useCart } from "../../Context/cart-context";
+import { useCart } from "../../context/cart-context";
 
 const SingleProductPage = () => {
   const [product, setProduct] = useState();

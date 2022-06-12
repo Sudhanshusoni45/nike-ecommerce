@@ -7,11 +7,11 @@ import {
 } from "../../assests";
 import "./Homepage.css";
 import { Link } from "react-router-dom";
-import { useFilters } from "../../Context/filter-context";
+import { useFilters } from "../../context/filter-context";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { getProductsHandler } from "../../utils";
-import { useProducts } from "../../Context/product-context";
+import { useProducts } from "../../context/product-context";
 
 const Homepage = () => {
   const { filterDispatch } = useFilters();
