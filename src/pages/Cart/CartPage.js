@@ -3,12 +3,17 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { CartItem, Navbar } from "../../components";
+import { useAuth } from "../../context/auth-context";
 import { useCart } from "../../context/cart-context";
+import { removeFromCartHandler } from "../../utils";
 
 const CartPage = () => {
-  const { cartState, removeFromCart } = useCart();
+  const { cartState, cartDispatch } = useCart();
   const [billPrice, setBillPrice] = useState(0);
   const Navigate = useNavigate();
+  const {
+    authState: { token },
+  } = useAuth();
 
   const billHandler = () => {
     let totalPrice = 0;
@@ -38,7 +43,9 @@ const CartPage = () => {
       handler: function () {
         Navigate("/productlist");
         toast.success("Order Placed Successfully");
-        cartState.map(({ _id }) => removeFromCart(_id));
+        cartState.map(({ _id }) =>
+          removeFromCartHandler({ _id, token, cartDispatch })
+        );
       },
       prefill: {
         name: "john doe",

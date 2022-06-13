@@ -12,3 +12,4 @@ export { loginHandler } from "./auth/loginHandler";
 export { signupHandler } from "./auth/signupHandler";
 // cart
 export { getCartHandler } from "./cart/getCartHandler";
+export { removeFromCartHandler } from "./cart/removeFromCartHandler";

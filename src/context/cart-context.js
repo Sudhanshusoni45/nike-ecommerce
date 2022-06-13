@@ -71,25 +71,6 @@ const CartProvider = ({ children }) => {
     }
   };
 
-  const removeFromCart = async (_id) => {
-    try {
-      const config = {
-        headers: {
-          authorization: token,
-        },
-      };
-      const response = await axios.delete(`/api/user/cart/${_id}`, config);
-      if (response.status === 200) {
-        cartDispatch({
-          type: "REMOVE_FROM_CART",
-          payload: { products: response.data.cart },
-        });
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
   const incrementQuantity = async (_id) => {
     try {
       const config = {
@@ -146,7 +127,6 @@ const CartProvider = ({ children }) => {
         cartState,
         cartDispatch,
         addToCart,
-        removeFromCart,
         incrementQuantity,
         decrementQuantity,
       }}

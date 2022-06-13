@@ -1,12 +1,16 @@
 import { useState } from "react";
+import { useAuth } from "../../context/auth-context";
 import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
+import { removeFromCartHandler } from "../../utils";
 import "./cartItem.css";
-import pic from "./shoe.png";
 
 const CartItem = ({ name, _id, price, rating, bgColor, qty, productImage }) => {
-  const { removeFromCart, addToCart, incrementQuantity, decrementQuantity } =
+  const { addToCart, incrementQuantity, decrementQuantity, cartDispatch } =
     useCart();
+  const {
+    authState: { token },
+  } = useAuth();
   const { addToWishList } = useWishlist();
   const [quantity, setQuantity] = useState(1);
   return (
@@ -22,7 +26,9 @@ const CartItem = ({ name, _id, price, rating, bgColor, qty, productImage }) => {
             {qty === 1 ? (
               <i
                 className="fas fa-trash"
-                onClick={() => removeFromCart(_id)}
+                onClick={() =>
+                  removeFromCartHandler({ _id, token, cartDispatch })
+                }
               ></i>
             ) : (
               <i
@@ -53,7 +59,7 @@ const CartItem = ({ name, _id, price, rating, bgColor, qty, productImage }) => {
                 bgColor,
                 productImage,
               });
-              removeFromCart(_id);
+              removeFromCartHandler({ _id, token, cartDispatch });
             }}
             className="btn"
           >
