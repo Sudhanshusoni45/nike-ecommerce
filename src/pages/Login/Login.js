@@ -23,7 +23,7 @@ const Login = () => {
 
   const clickHandler = (e) => {
     e.preventDefault();
-    loginHandler({ authDispatch, user, Navigate });
+    loginHandler({ authDispatch, user, Navigate, location });
   };
   return (
     <>

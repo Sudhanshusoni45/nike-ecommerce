@@ -4,7 +4,12 @@ import { Navbar } from "../../components";
 import { useAuth } from "../../context/auth-context";
 import { signupHandler } from "../../utils";
 const Signup = () => {
-  const [newUser, setNewUser] = useState("");
+  const [newUser, setNewUser] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
   const { authDispatch } = useAuth();
   const Navigate = useNavigate();
 

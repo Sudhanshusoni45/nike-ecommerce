@@ -6,13 +6,14 @@ const signupHandler = async ({ authDispatch, newUser, Navigate }) => {
 
     if (response.status === 201) {
       const { encodedToken: token } = response.data;
-      const { createdUser } = response.data;
+      const { createdUser: user } = response.data;
+
       localStorage.setItem("token", token);
-      localStorage.setItem("user", JSON.stringify(createdUser));
+      localStorage.setItem("user", JSON.stringify(user));
 
       authDispatch({
         type: "SIGNUP",
-        payload: { user: createdUser, token: token },
+        payload: { user, token },
       });
 
       Navigate("/");
