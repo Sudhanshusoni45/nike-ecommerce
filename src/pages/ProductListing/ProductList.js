@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { Card, Navbar, FilterSideBar } from "../../components";
+import { useAuth } from "../../context/auth-context";
+import { useCart } from "../../context/cart-context";
 import { useProducts } from "../../context/product-context";
 import {
   categoryFilter,
+  getCartHandler,
   getProductsHandler,
   getSortData,
   priceFilter,
@@ -14,6 +17,7 @@ import "./productList.css";
 
 const ProductList = () => {
   const { productDispatch } = useProducts();
+
   useEffect(() => getProductsHandler(productDispatch), []);
 
   const bgColors = ["bg-yellow", "bg-blue", "bg-pink", "bg-green", "bg-orange"];
@@ -24,7 +28,9 @@ const ProductList = () => {
   const ratingData = ratingFilter(priceFilterData);
   const sortedData = getSortData(ratingData);
   const searchedData = searchHandler({ sortedData, searchQuery });
+
   scroll(0, 0);
+
   return (
     <>
       <Navbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />

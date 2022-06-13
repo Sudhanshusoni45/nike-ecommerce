@@ -10,13 +10,19 @@ import { Link } from "react-router-dom";
 import { useFilters } from "../../context/filter-context";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { getProductsHandler } from "../../utils";
+import { getCartHandler, getProductsHandler } from "../../utils";
 import { useProducts } from "../../context/product-context";
+import { useCart } from "../../context/cart-context";
+import { useAuth } from "../../context/auth-context";
 
 const Homepage = () => {
   const { filterDispatch } = useFilters();
   const Navigate = useNavigate();
   const { productDispatch } = useProducts();
+  const { cartDispatch } = useCart();
+  const {
+    authState: { token },
+  } = useAuth();
 
   const showCategoryProducts = (type) => {
     filterDispatch({ type: "RESET" });
@@ -25,6 +31,7 @@ const Homepage = () => {
   };
 
   useEffect(() => getProductsHandler(productDispatch), []);
+  useEffect(() => getCartHandler({ token, cartDispatch }), []);
 
   return (
     <>

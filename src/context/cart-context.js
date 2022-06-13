@@ -12,25 +12,6 @@ const CartProvider = ({ children }) => {
   const { authState } = useAuth();
   const { token } = authState;
 
-  const getCart = async () => {
-    try {
-      const config = {
-        headers: {
-          authorization: token,
-        },
-      };
-      const response = await axios.get("/api/user/cart", config);
-      if (response.status == 200) {
-        cartDispatch({
-          type: "INITIALIZE",
-          payload: { products: response.data.cart },
-        });
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
   const alreadyInCart = (_id) => {
     let flag = false;
     cartState.map((item) => {
@@ -158,8 +139,6 @@ const CartProvider = ({ children }) => {
       alert(err);
     }
   };
-
-  useEffect(() => getCart(), []);
 
   return (
     <CartContext.Provider
