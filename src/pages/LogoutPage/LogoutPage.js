@@ -7,6 +7,7 @@ const LogoutPage = () => {
   const Navigate = useNavigate();
   const logoutHandler = () => {
     authDispatch({ type: "LOGOUT", payload: { user: null, token: null } });
+    localStorage.clear();
     Navigate("/login");
   };
   return (
