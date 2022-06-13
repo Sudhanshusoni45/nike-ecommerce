@@ -9,3 +9,4 @@ export { getSingleProduct } from "./getSingleProduct";
 export { getProductsHandler } from "./getProductsHandler";
 // auth
 export { loginHandler } from "./auth/loginHandler";
+export { signupHandler } from "./auth/signupHandler";

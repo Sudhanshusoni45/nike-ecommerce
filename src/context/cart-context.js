@@ -46,6 +46,7 @@ const CartProvider = ({ children }) => {
       const itemInCart = alreadyInCart(product._id);
 
       if (itemInCart) {
+        console.log("if ran");
         const data = {
           action: {
             type: "increment",
@@ -68,6 +69,8 @@ const CartProvider = ({ children }) => {
           payload: { products: response.data.cart },
         });
       } else {
+        console.log("else ran");
+
         const data = { product };
         const config = {
           headers: {
@@ -82,6 +85,7 @@ const CartProvider = ({ children }) => {
       }
       toast.success("Item added to cart");
     } catch (err) {
+      console.log("addtocart catch");
       console.error(err);
     }
   };

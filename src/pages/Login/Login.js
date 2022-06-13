@@ -11,8 +11,8 @@ const Login = () => {
   const Navigate = useNavigate();
 
   const [user, setUser] = useState({
-    email: "sudhanshu@gmail.com",
-    password: "sudhanshu",
+    email: "johndoe@gmail.com",
+    password: "johnDoe123",
   });
 
   const changeHandler = (e) => {
@@ -29,7 +29,7 @@ const Login = () => {
     <>
       <Navbar />
       <div className="login-component">
-        <form action="" className="login-form" onSubmit={loginHandler}>
+        <form action="" className="login-form">
           <h1>Login</h1>
           <div className="input-group">
             <label htmlFor="email">Email Address</label>
@@ -62,7 +62,7 @@ const Login = () => {
           </a>
           <Link to={"/signup"}> New here? Create a new account </Link>
 
-          <button className="btn login-btn" onClick={clickHandler}>
+          <button className="btn auth-btn" onClick={clickHandler}>
             Login
           </button>
         </form>

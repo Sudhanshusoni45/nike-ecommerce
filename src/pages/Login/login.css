@@ -1,14 +1,12 @@
 body {
   background: var(--bg-grey-color);
 }
-
 .login-component {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 85vh;
 }
-
 .login-form {
   width: 30%;
   box-shadow: var(--big-box-shadow);
@@ -21,15 +19,19 @@ body {
   align-items: center;
   gap: 0.5rem;
 }
-
 .btn {
   border-radius: 12px;
 }
-
-.login-btn {
+.auth-btn {
   padding: 0;
   display: block;
   width: 65%;
   font-size: 1.2rem;
   background: var(--dark-purple);
+  margin-top: 0.2rem;
+}
+.login_instead_link {
+  display: inline-block;
+  width: 14rem;
+  text-align: center;
 }

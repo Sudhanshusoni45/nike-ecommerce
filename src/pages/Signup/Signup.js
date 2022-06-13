@@ -1,48 +1,31 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Navbar } from "../../components";
-import axios from "axios";
 import { useAuth } from "../../context/auth-context";
+import { signupHandler } from "../../utils";
 const Signup = () => {
   const [newUser, setNewUser] = useState("");
   const { authDispatch } = useAuth();
-  const navigate = useNavigate();
+  const Navigate = useNavigate();
+
   const changeHandler = (e) => {
     const name = e.target.name;
     const value = e.target.value;
     setNewUser({ ...newUser, [name]: value });
   };
 
-  const submitHandler = async (e) => {
+  const submitHandler = (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post("api/auth/signup", {
-        email: newUser.email,
-        password: newUser.password,
-      });
+    signupHandler({ authDispatch, newUser, Navigate });
+  };
 
-      const { status } = response;
-      const { encodedToken: token } = response.data;
-      const { createdUser } = response.data;
-
-      if (status === 201) {
-        localStorage.setItem("token", token);
-        localStorage.setItem("user", JSON.stringify(createdUser));
-
-        authDispatch({
-          type: "SIGNUP",
-          payload: { user: createdUser, token: token },
-        });
-
-        navigate("/");
-      } else if (status === 422) {
-        throw new Error("Email already exists");
-      } else if (status === 500) {
-        throw new Error("Server Error");
-      }
-    } catch (err) {
-      console.error(err);
-    }
+  const testCredsHandler = () => {
+    setNewUser((prevState) => ({
+      firstName: "sudhanshu",
+      lastName: "soni",
+      email: "sudhanshusoni@gmail.com",
+      password: "sudhanshu@123",
+    }));
   };
 
   return (
@@ -88,18 +71,16 @@ const Signup = () => {
               onChange={changeHandler}
             />
           </div>
-          <div>
-            <input type="checkbox" name="rememberMe" id="rememberMe" />
-            <label className="margin-left-xxs" htmlFor="rememberMe">
-              Remember me
-            </label>
-          </div>
-          <a href="">
-            <small>Forgot your password</small>
-          </a>
-          <Link to={"/login"}>Already have an account ? Login instead</Link>
 
-          <button className="btn login-btn">SignUp</button>
+          <Link to={"/login"}>
+            <span className="login_instead_link">
+              Already have an account ? Login instead
+            </span>
+          </Link>
+          <button className="btn auth-btn" onClick={testCredsHandler}>
+            Test Creadentials
+          </button>
+          <button className="btn auth-btn">SignUp</button>
         </form>
       </div>
     </>
