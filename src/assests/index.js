@@ -13,6 +13,11 @@ import nike_running_shoe from "./nike_running_shoe.png";
 import jordan_1_mid from "./jordan_1_mid.png";
 import nike_mercurial from "./nike_mercurial.png";
 import premier_3_FG from "./premier_3_FG.png";
+import jordan_one_mid_blue from "./jordan_one_mid_blue.png";
+import air_zoom_maxfly_more_uptempo from "./air_zoom_maxfly_more_uptempo.png";
+import air_zoom_pegasus_38 from "./air_zoom_pegasus_38.png";
+import jordan_one_low from "./jordan_one_low.png";
+import zoomX_streakfly from "./zoomX_streakfly.png";
 export {
   heroimage,
   menCategory,
@@ -29,4 +34,9 @@ export {
   jordan_1_mid,
   nike_mercurial,
   premier_3_FG,
+  jordan_one_mid_blue,
+  air_zoom_maxfly_more_uptempo,
+  air_zoom_pegasus_38,
+  jordan_one_low,
+  zoomX_streakfly,
 };

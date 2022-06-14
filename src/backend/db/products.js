@@ -4,23 +4,28 @@ import { v4 as uuid } from "uuid";
  * You can add products of your wish with different attributes
  * */
 import {
+  air_zoom_maxfly_more_uptempo,
+  air_zoom_pegasus_38,
   jordan_1_mid,
+  jordan_one_low,
+  jordan_one_mid_blue,
   nike_mercurial,
   nike_running_shoe,
   premier_3_FG,
   running,
   shoe,
+  zoomX_streakfly,
 } from "../../assests";
 
 export const products = [
   {
     _id: uuid(),
-    name: "Running Zoom",
+    name: "Jordan 1 Mid",
     price: 99,
-    categoryName: "running",
+    categoryName: "jordans",
     inWishList: true,
     rating: 4,
-    productImage: shoe,
+    productImage: jordan_one_mid_blue,
   },
   {
     _id: uuid(),
@@ -33,7 +38,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    name: "Jordan 1 Mid",
+    name: "jordan Mid SE",
     price: 97,
     categoryName: "jordans",
     inWishList: false,
@@ -49,7 +54,7 @@ export const products = [
     categoryName: "jordans",
     inWishList: false,
     rating: 1,
-    productImage: shoe,
+    productImage: air_zoom_maxfly_more_uptempo,
   },
   {
     _id: uuid(),
@@ -98,21 +103,21 @@ export const products = [
   },
   {
     _id: uuid(),
-    name: "Basketball Zoo",
+    name: "Jordan 1 low",
     price: 115,
-    categoryName: "basketball",
+    categoryName: "jordans",
     inWishList: false,
     rating: 2,
-    productImage: shoe,
+    productImage: jordan_one_low,
   },
   {
     _id: uuid(),
-    name: "Walking Zoom",
+    name: "zoom streakfly",
     price: 103,
-    categoryName: "walking",
+    categoryName: "running",
     inWishList: false,
     rating: 3,
-    productImage: shoe,
+    productImage: zoomX_streakfly,
   },
   {
     _id: uuid(),
@@ -125,11 +130,11 @@ export const products = [
   },
   {
     _id: uuid(),
-    name: "Jordan Zoom",
+    name: "Zoom Pegasus",
     price: 100,
-    categoryName: "jordans",
+    categoryName: "running",
     inWishList: false,
     rating: 3,
-    productImage: shoe,
+    productImage: air_zoom_pegasus_38,
   },
 ];

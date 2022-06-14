@@ -6,13 +6,11 @@ import { removeFromCartHandler } from "../../utils";
 import "./cartItem.css";
 
 const CartItem = ({ name, _id, price, rating, bgColor, qty, productImage }) => {
-  const { addToCart, incrementQuantity, decrementQuantity, cartDispatch } =
-    useCart();
+  const { incrementQuantity, decrementQuantity, cartDispatch } = useCart();
   const {
     authState: { token },
   } = useAuth();
   const { addToWishList } = useWishlist();
-  const [quantity, setQuantity] = useState(1);
   return (
     <>
       <div className="horizontal-ecomm-card">
