@@ -22,55 +22,6 @@ const CartProvider = ({ children }) => {
     return flag;
   };
 
-  const addToCart = async (product) => {
-    try {
-      const itemInCart = alreadyInCart(product._id);
-
-      if (itemInCart) {
-        console.log("if ran");
-        const data = {
-          action: {
-            type: "increment",
-          },
-        };
-
-        const config = {
-          headers: {
-            authorization: token,
-          },
-        };
-        const response = await axios.post(
-          `/api/user/cart/${product._id}`,
-          data,
-          config
-        );
-
-        cartDispatch({
-          type: "ADD_TO_CART",
-          payload: { products: response.data.cart },
-        });
-      } else {
-        console.log("else ran");
-
-        const data = { product };
-        const config = {
-          headers: {
-            authorization: token,
-          },
-        };
-        const response = await axios.post("/api/user/cart", data, config);
-        cartDispatch({
-          type: "ADD_TO_CART",
-          payload: { products: response.data.cart },
-        });
-      }
-      toast.success("Item added to cart");
-    } catch (err) {
-      console.log("addtocart catch");
-      console.error(err);
-    }
-  };
-
   const incrementQuantity = async (_id) => {
     try {
       const config = {
@@ -126,7 +77,6 @@ const CartProvider = ({ children }) => {
       value={{
         cartState,
         cartDispatch,
-        addToCart,
         incrementQuantity,
         decrementQuantity,
       }}

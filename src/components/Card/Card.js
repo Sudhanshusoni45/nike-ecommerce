@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
 import { useAuth } from "../../context/auth-context";
+import { addToCartHandler } from "../../utils";
 
 const Card = ({
   _id,
@@ -16,7 +17,7 @@ const Card = ({
 }) => {
   const { addToWishList, wishlistState, deleteFromWishlist } = useWishlist();
   const [inWishlist, setInWishlist] = useState(fromWishlist);
-  const { addToCart, cartState } = useCart();
+  const { cartState, cartDispatch } = useCart();
   const checkInWishlist = () => {
     wishlistState.map((item) =>
       item._id === _id ? setInWishlist(true) : null
@@ -99,15 +100,19 @@ const Card = ({
         {fromWishlist ? (
           <button
             onClick={(e) => {
-              addToCart({
-                _id,
-                name,
-                price,
-                bgColor,
-                inWishlist,
-                rating,
-                productImage,
-              });
+              addToCartHandler(
+                {
+                  _id,
+                  name,
+                  price,
+                  bgColor,
+                  inWishlist,
+                  rating,
+                  productImage,
+                },
+                cartDispatch,
+                token
+              );
               deleteFromWishlist(_id);
               e.stopPropagation();
             }}
@@ -132,15 +137,19 @@ const Card = ({
                 onClick={(e) => {
                   {
                     token
-                      ? addToCart({
-                          _id,
-                          name,
-                          price,
-                          bgColor,
-                          inWishlist,
-                          rating,
-                          productImage,
-                        })
+                      ? addToCartHandler(
+                          {
+                            _id,
+                            name,
+                            price,
+                            bgColor,
+                            inWishlist,
+                            rating,
+                            productImage,
+                          },
+                          cartDispatch,
+                          token
+                        )
                       : Navigate("/login");
                   }
                   e.stopPropagation();
