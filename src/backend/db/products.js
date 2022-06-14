@@ -9,6 +9,10 @@ import {
   jordan_1_mid,
   jordan_one_low,
   jordan_one_mid_blue,
+  jordan_why_not,
+  KD15_EP,
+  kyrie_infinity_ep,
+  LeBron_19,
   nike_mercurial,
   nike_running_shoe,
   premier_3_FG,
@@ -67,12 +71,14 @@ export const products = [
   },
   {
     _id: uuid(),
-    name: "Football Zoom",
+    name: "LeBron 19",
     price: 801,
-    categoryName: "football",
+    categoryName: "basketball",
+    description:
+      "LeBron plays less in the paint and more at the point, so it makes sense that he wants to feel a little quicker. His 19th signature gives you the feeling of containment but with a lighter design that's ideal for fast, strong players like LeBron who stretch the court.",
     inWishList: false,
     rating: 4,
-    productImage: shoe,
+    productImage: LeBron_19,
   },
   {
     _id: uuid(),
@@ -85,21 +91,36 @@ export const products = [
   },
   {
     _id: uuid(),
-    name: "Basketball Zoo",
-    price: 102,
+    name: "Kyrie Infinity EP",
+    price: 108,
     categoryName: "basketball",
+    description:
+      "The faster Kyrie slows down, the quicker he can speed up or change direction. His ability to control his movement keeps defenders guessing—and him in control. The Kyrie Infinity EP provides a tight fit with enhanced responsiveness in the forefoot and traction up the sides, helping you accelerate and decelerate on demand.",
     inWishList: false,
     rating: 1,
-    productImage: shoe,
+    productImage: kyrie_infinity_ep,
   },
   {
     _id: uuid(),
-    name: "Basketball Zoo",
-    price: 109,
+    name: "KD15 EP",
+    price: 101,
     categoryName: "basketball",
+    description:
+      "Kevin Durant thrives on big games. When the stakes are high, he will play every minute if it means getting a crucial victory. The KD15 is ready to go the distance. Lighter than his previous signature shoe, it helps you stay bouncy and comfortable at crunch time. The ride is as smooth as KDs pull-up jumper and the cushioning is as plush as his right-to-left crossover in traffic, so that you can feel contained when your team needs you the most. This EP version uses an extra-durable sole thats ideal for outdoor courts.",
     inWishList: false,
     rating: 3,
-    productImage: shoe,
+    productImage: KD15_EP,
+  },
+  {
+    _id: uuid(),
+    name: "jordan why not",
+    price: 101,
+    categoryName: "basketball",
+    description:
+      "Russell Westbrook is fast. The Jordan Why Not .5 helps keep him contained with updated cushioning, data-informed traction and a full-foot fit system that keeps him in control. It has the rugged utility look of a trail running shoe combined with the on-purpose clash of colours and materials at the core of Why Not?",
+    inWishList: false,
+    rating: 3,
+    productImage: jordan_why_not,
   },
   {
     _id: uuid(),
@@ -126,6 +147,8 @@ export const products = [
     categoryName: "walking",
     inWishList: false,
     rating: 4,
+    description:
+      "The Nike React Infinity Run Flyknit 2 continues to help reduce injury and keep you running.A refreshed upper uses Flywire technology that combines with Flyknit for support and breathability where you need it.The high foam heights provide soft responsiveness and long-lasting comfort.Its still one of our most tested shoes, designed to help you feel the potential when your foot hits the pavement.",
     productImage: shoe,
   },
   {

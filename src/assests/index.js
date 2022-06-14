@@ -18,7 +18,12 @@ import air_zoom_maxfly_more_uptempo from "./air_zoom_maxfly_more_uptempo.png";
 import air_zoom_pegasus_38 from "./air_zoom_pegasus_38.png";
 import jordan_one_low from "./jordan_one_low.png";
 import zoomX_streakfly from "./zoomX_streakfly.png";
+import LeBron_19 from "./LeBron_19.png";
+import kyrie_infinity_ep from "./kyrie_infinity_ep.png";
+import KD15_EP from "./KD15_EP.png";
+import jordan_why_not from "./jordan_why_not.png";
 export {
+  jordan_why_not,
   heroimage,
   menCategory,
   womenCategory,
@@ -39,4 +44,7 @@ export {
   air_zoom_pegasus_38,
   jordan_one_low,
   zoomX_streakfly,
+  LeBron_19,
+  kyrie_infinity_ep,
+  KD15_EP,
 };
