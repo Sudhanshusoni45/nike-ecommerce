@@ -9,43 +9,9 @@ const initialState = [];
 
 const CartProvider = ({ children }) => {
   const [cartState, cartDispatch] = useReducer(cartReducer, initialState);
+  console.log("cartState:", cartState);
   const { authState } = useAuth();
   const { token } = authState;
-
-  const alreadyInCart = (_id) => {
-    let flag = false;
-    cartState.map((item) => {
-      if (item._id === _id) {
-        flag = true;
-      }
-    });
-    return flag;
-  };
-
-  const incrementQuantity = async (_id) => {
-    try {
-      const config = {
-        headers: {
-          authorization: token,
-        },
-      };
-      const response = await axios.post(
-        `/api/user/cart/${_id}`,
-        {
-          action: { type: "increment" },
-        },
-        config
-      );
-      if (response.status === 200) {
-        cartDispatch({
-          type: "UPDATE",
-          payload: { products: response.data.cart },
-        });
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  };
 
   const decrementQuantity = async (_id) => {
     try {
@@ -77,7 +43,6 @@ const CartProvider = ({ children }) => {
       value={{
         cartState,
         cartDispatch,
-        incrementQuantity,
         decrementQuantity,
       }}
     >

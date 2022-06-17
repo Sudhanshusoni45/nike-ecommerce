@@ -2,16 +2,22 @@ import { toast } from "react-toastify";
 import { addToCartService } from "../../services";
 
 const addToCartHandler = async (product, cartDispatch, token) => {
-  const alreadyInCart = (_id) => {
-    let flag = false;
-    cartState.map((item) => {
-      if (item._id === _id) {
-        flag = true;
-      }
-    });
-    return flag;
-  };
   try {
+    const alreadyInCart = (_id) => {
+      let isItemInCart = false;
+      cartState.map((item) => {
+        if (item._id === _id) {
+          isItemInCart = true;
+        }
+      });
+      return isItemInCart;
+    };
+
+    // if (alreadyInCart()) {
+    //   toast.warning("Item already in cart");
+    //   return;
+    // }
+
     // const itemInCart = alreadyInCart(product._id);
     const response = await addToCartService(product, token);
     {
