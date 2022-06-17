@@ -2,11 +2,15 @@ import { useState } from "react";
 import { useAuth } from "../../context/auth-context";
 import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
-import { removeFromCartHandler } from "../../utils";
+import {
+  decrementItemQtyHandler,
+  incrementItemQtyHandler,
+  removeFromCartHandler,
+} from "../../utils";
 import "./cartItem.css";
 
 const CartItem = ({ name, _id, price, rating, bgColor, qty, productImage }) => {
-  const { incrementQuantity, decrementQuantity, cartDispatch } = useCart();
+  const { decrementQuantity, cartDispatch } = useCart();
   const {
     authState: { token },
   } = useAuth();
@@ -31,7 +35,9 @@ const CartItem = ({ name, _id, price, rating, bgColor, qty, productImage }) => {
             ) : (
               <i
                 className="fas fa-minus"
-                onClick={() => decrementQuantity(_id)}
+                onClick={() =>
+                  decrementItemQtyHandler({ token, _id, cartDispatch })
+                }
               ></i>
             )}
             <span>
@@ -42,7 +48,7 @@ const CartItem = ({ name, _id, price, rating, bgColor, qty, productImage }) => {
             <i
               className="fas fa-plus "
               onClick={() => {
-                incrementQuantity(_id);
+                incrementItemQtyHandler({ _id, token, cartDispatch });
               }}
             ></i>
           </div>

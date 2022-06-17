@@ -1,16 +1,20 @@
 import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 import { Navbar } from "../../components";
-import { getSingleProduct } from "../../utils";
+import { addToCartHandler, getSingleProduct } from "../../utils";
 import { useEffect } from "react";
 import "./SingleProductPage.css";
 import { useCart } from "../../context/cart-context";
+import { useAuth } from "../../context/auth-context";
 
 const SingleProductPage = () => {
   const [product, setProduct] = useState();
-  const { addToCart, cartState } = useCart();
+  const { cartState, cartDispatch } = useCart();
   const [isProductInCart, setIsProductInCart] = useState(false);
   const { productId } = useParams();
+  const {
+    authState: { token },
+  } = useAuth();
 
   useEffect(() => {
     getSingleProduct({ productId, setProduct });
@@ -56,7 +60,7 @@ const SingleProductPage = () => {
             ) : (
               <button
                 className="btn bg-purple"
-                onClick={() => addToCart(product)}
+                onClick={() => addToCartHandler(product, cartDispatch, token)}
               >
                 Add to Cart
               </button>
