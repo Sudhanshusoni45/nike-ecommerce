@@ -18,13 +18,13 @@ const FilterSideBar = () => {
     <>
       <aside className="ecomm-sidebar">
         <div className="sidebar-filters">
-          <h3>Filters</h3>
+          <h3 className="margin-bottom-xxs">Filters</h3>
           <a href="#">
             <span onClick={() => filterDispatch({ type: "RESET" })}>Clear</span>
           </a>
         </div>
         <div className="sidebar-filters">
-          <h3>Category</h3>
+          <h3 className="margin-bottom-xxs">Category</h3>
           <ul>
             <div>
               <input
@@ -116,7 +116,7 @@ const FilterSideBar = () => {
         </div>
 
         <div className="sidebar-filters">
-          <h3>Price</h3>
+          <h3 className="margin-bottom-xxs">Price</h3>
           <label htmlFor="priceSlider">$0 to ${rangeValue}</label>
           <input
             type="range"
@@ -131,7 +131,7 @@ const FilterSideBar = () => {
         </div>
 
         <div className="sidebar-filters">
-          <h3>Sort By</h3>
+          <h3 className="margin-bottom-xxs">Sort By</h3>
           <div>
             <input
               type="radio"
@@ -160,7 +160,7 @@ const FilterSideBar = () => {
             </label>
           </div>
         </div>
-        <h3>Rating</h3>
+        <h3 className="margin-bottom-xxs">Rating</h3>
         <div>
           <input
             type="radio"

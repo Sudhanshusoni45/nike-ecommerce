@@ -1,7 +1,7 @@
 .ecomm-sidebar {
   position: sticky;
   top: 4.2rem;
-  height: 50rem;
+  height: 91vh;
   background: var(--white-color);
   padding: var(--space-md);
   width: 18rem;

@@ -55,12 +55,17 @@ body {
 .margin-left-small {
   margin-left: var(--space-xs);
 }
+
 .margin-left-xxs {
   margin-left: var(--space-xxs);
 }
 
 .margin-right-xxs {
   margin-right: var(--space-xxs);
+}
+
+.margin-bottom-xxs {
+  margin-bottom: var(--space-xxs);
 }
 
 /* Header */
@@ -91,7 +96,7 @@ body {
 /* sidebar */
 
 .sidebar-filters {
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-sm);
 }
 
 .sidebar-filters label {
