@@ -26,6 +26,8 @@ export const products = [
     _id: uuid(),
     name: "Jordan 1 Mid",
     price: 99,
+    description:
+      "Inspired by the original AJ1, the Air Jordan 1 Mid offers fans a chance to follow in MJ's footsteps. Fresh colour trims the clean, classic materials, imbuing modernity into a classic design.",
     categoryName: "jordans",
     inWishList: true,
     rating: 4,
@@ -35,6 +37,8 @@ export const products = [
     _id: uuid(),
     name: "Alphafly Zoom",
     price: 98,
+    description:
+      "Push to the finish with the next step in our sustainability journey.We made the ultralight Nike Air Zoom Alphafly Next Nature with at least 50% recycled content by weight, using recycled materials that won't sacrifice performance.It's still made to help you unlock new personal records, with a secure, breathable design that is so light, it'll feel like flying.You've trained hard, time to lace up and break through wearing a shoe born from waste.",
     categoryName: "running",
     inWishList: false,
     rating: 3,
@@ -55,6 +59,8 @@ export const products = [
     _id: uuid(),
     name: "Jordan Zoom",
     price: 96,
+    description: "",
+
     categoryName: "jordans",
     inWishList: false,
     rating: 1,
@@ -64,6 +70,8 @@ export const products = [
     _id: uuid(),
     name: "Football Zoom",
     price: 701,
+    description:
+      "Show your team pride in a brand-new Nike Mercurial Vapor 14 Academy By You. Pop your design with an array of colours that reflect your power, speed and agility. Plate options let you pick the traction that's right for your game and a national flag option lets you rep your favourite squad.",
     categoryName: "football",
     inWishList: false,
     rating: 4,
@@ -84,6 +92,8 @@ export const products = [
     _id: uuid(),
     name: "Premier 3 FG",
     price: 901,
+    description:
+      "The Nike Premier 3 gets back to the basics with a timeless silhouette wrapped in supple kangaroo leather—helping you to move confidently as an unstoppable force on the pitch.",
     categoryName: "football",
     inWishList: false,
     rating: 3,
@@ -126,6 +136,8 @@ export const products = [
     _id: uuid(),
     name: "Jordan 1 low",
     price: 115,
+    description:
+      "Are you ready for game day? Your fave kicks are. Inspired by the original AJ1 from '85, pixelated graphics and branding nod to old-school video games, while patent-leather overlays up the shine. What are you waiting for—hit the streets without a glitch.",
     categoryName: "jordans",
     inWishList: false,
     rating: 2,
@@ -135,6 +147,8 @@ export const products = [
     _id: uuid(),
     name: "zoom streakfly",
     price: 103,
+    description:
+      "Our lightest racing shoe, the Nike ZoomX Streakfly is all about the speed you need to take on the competition in a mile, 5K or 10K race. Low profile with sleek details, it feels like it disappears on your foot to help you better connect with the road on the way to your personal best.",
     categoryName: "running",
     inWishList: false,
     rating: 3,
@@ -155,6 +169,8 @@ export const products = [
     _id: uuid(),
     name: "Zoom Pegasus",
     price: 100,
+    description:
+      "Your workhorse with wings returns. The Nike Air Zoom Pegasus 38 continues to put a spring in your step, using the same responsive foam as its predecessor. Breathable mesh in the upper combines the comfort and durability you want with a wider fit at the toes.",
     categoryName: "running",
     inWishList: false,
     rating: 3,
