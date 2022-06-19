@@ -1,12 +1,9 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { Card, Navbar, FilterSideBar } from "../../components";
-import { useAuth } from "../../context/auth-context";
-import { useCart } from "../../context/cart-context";
 import { useProducts } from "../../context/product-context";
 import {
   categoryFilter,
-  getCartHandler,
   getProductsHandler,
   getSortData,
   priceFilter,
@@ -29,7 +26,7 @@ const ProductList = () => {
   const sortedData = getSortData(ratingData);
   const searchedData = searchHandler({ sortedData, searchQuery });
 
-  scroll(0, 0);
+  useEffect(() => scroll(0, 0), []);
 
   return (
     <>
