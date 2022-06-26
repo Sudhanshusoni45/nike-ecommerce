@@ -1,0 +1,22 @@
+.profile-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 66vh;
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  background: white;
+  width: 25rem;
+  padding: var(--space-sm);
+  border-radius: 1rem;
+  align-items: center;
+}
+.logout-btn {
+  width: 7rem;
+}
+.profile-page-heading {
+  text-decoration: underline;
+}
