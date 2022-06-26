@@ -80,7 +80,7 @@ export const products = [
   {
     _id: uuid(),
     name: "LeBron 19",
-    price: 801,
+    price: 107,
     categoryName: "basketball",
     description:
       "LeBron plays less in the paint and more at the point, so it makes sense that he wants to feel a little quicker. His 19th signature gives you the feeling of containment but with a lighter design that's ideal for fast, strong players like LeBron who stretch the court.",
@@ -168,7 +168,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Zoom Pegasus",
-    price: 100,
+    price: 197,
     description:
       "Your workhorse with wings returns. The Nike Air Zoom Pegasus 38 continues to put a spring in your step, using the same responsive foam as its predecessor. Breathable mesh in the upper combines the comfort and durability you want with a wider fit at the toes.",
     categoryName: "running",
