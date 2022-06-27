@@ -8,7 +8,7 @@ body {
   height: 85vh;
 }
 .login-form {
-  width: 30%;
+  width: 28rem;
   box-shadow: var(--big-box-shadow);
   background: var(--white-color);
   border-radius: 15px;
