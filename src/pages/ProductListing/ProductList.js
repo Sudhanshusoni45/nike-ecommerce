@@ -18,7 +18,7 @@ const ProductList = () => {
   useEffect(() => getProductsHandler(productDispatch), []);
 
   const bgColors = ["bg-yellow", "bg-blue", "bg-pink", "bg-green", "bg-orange"];
-  const [searchQuery, setSearchQuery] = useState();
+  const [searchQuery, setSearchQuery] = useState("");
 
   const categoryData = categoryFilter();
   const priceFilterData = priceFilter(categoryData);
