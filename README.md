@@ -8,13 +8,14 @@ Nike Ecommerce is online shoe store where you can buy all the authentic Nike sne
 * Authentication
     * Login
     * Signup
+    * Logout
 * Filters
     * Sort by price
     * Filter by rating
     * Filter by Price Slider
     * Filter by shoe category
     * Clear filters
-* Wishlist
+* Wishlist Management
     * Add to Wishlist
     * Remove from Wishlist
     * Move to cart from Wishlist
@@ -24,6 +25,7 @@ Nike Ecommerce is online shoe store where you can buy all the authentic Nike sne
     * Inc/Dec quantity
     * Delete from cart
     * Add to wishlist from cart
+* Payment Integration with Razorpay SDK    
 
 ##Screenshots
 
