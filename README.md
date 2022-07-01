@@ -25,7 +25,16 @@ Nike Ecommerce is online shoe store where you can buy all the authentic Nike sne
     * Inc/Dec quantity
     * Delete from cart
     * Add to wishlist from cart
-* Payment Integration with Razorpay SDK    
+* Payment Integration with Razorpay SDK
+
+## Built With
+
+- React
+- React Router
+- Mockbee Mock backend
+- Maya Ui
+- Font Awesome
+- React Toastify
 
 ## Screenshots
 
